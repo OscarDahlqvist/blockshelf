@@ -10,10 +10,10 @@ import org.bukkit.event.block.BlockPlaceEvent;
 
 public class PlaceBlockListener implements Listener {
     @EventHandler
-    public void onBlockPlace(BlockPlaceEvent evt)
-    {
-        if(CustomRegistry.isItemStackItemStackOfCB(evt.getItemInHand())){
-            CustomBlock cb = CustomRegistry.getCustomBlockByStack(evt.getItemInHand());
+    public void onBlockPlace(BlockPlaceEvent evt) {
+
+        CustomBlock cb = CustomRegistry.getCustomBlockByStack(evt.getItemInHand());
+        if(cb != null){
             cb.placeBlock(evt.getBlockPlaced().getLocation(),evt);
             if(evt.getPlayer().getGameMode() != GameMode.CREATIVE) evt.getItemInHand().setAmount(evt.getItemInHand().getAmount() - 1);
         }

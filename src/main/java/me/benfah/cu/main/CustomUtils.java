@@ -30,9 +30,11 @@ public class CustomUtils extends JavaPlugin
 		CustomRegistry.initMaps();
 		
 		Config.onEnable();
-		
+
+		//File downloading goes here v
 		InitializationMethodRegistry.initMethods();
 		InitializationMethodProvider.setCurrentMethod(Config.getConfiguration().getString("init-method"));
+
 		Bukkit.getPluginManager().registerEvents(new SlotChangeListener(), this);
 		Bukkit.getPluginManager().registerEvents(new PlayerInteractEntityListener(), this);
 		Bukkit.getPluginManager().registerEvents(new InventoryClickListener(), this);
@@ -52,8 +54,6 @@ public class CustomUtils extends JavaPlugin
 			@Override
 			public void run() {
 				InitializationMethodProvider.init(false);
-				
-				
 			}
 		});
 		

@@ -1,6 +1,8 @@
 package me.benfah.cu.listener;
 
 import me.wilux.blockshelf.Main;
+import me.wilux.blockshelf.items.WireSpool;
+import org.apache.http.impl.conn.Wire;
 import org.bukkit.GameMode;
 import org.bukkit.Location;
 import org.bukkit.block.Block;
@@ -25,6 +27,19 @@ public class PlayerInteractListener implements Listener
 	public void onInteract(PlayerInteractEvent e)
 	{
 		//TODO make the priority of actions correct
+
+		//WIRE SPOOL always has priority
+		if(e.getAction() == Action.RIGHT_CLICK_AIR || e.getAction() == Action.RIGHT_CLICK_BLOCK){
+			ItemStack clickItem = e.getItem();
+			CustomItem ci = CustomRegistry.getCustomItem(clickItem);
+			if (ci!=null) {
+				if (ci.getName().equals(WireSpool.ID)){
+					ci.onInteract(e, e.getHand());
+					e.setCancelled(true);
+					return;
+				}
+			}
+		}
 
 		if(e.getAction() == Action.RIGHT_CLICK_BLOCK && !e.getPlayer().isSneaking()){
 			if(CustomRegistry.isCustomBlock(e.getClickedBlock())){

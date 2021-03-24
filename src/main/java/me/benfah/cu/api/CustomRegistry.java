@@ -18,6 +18,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.World;
 import org.bukkit.block.Block;
+import org.bukkit.craftbukkit.libs.jline.internal.Nullable;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
@@ -348,11 +349,16 @@ public class CustomRegistry
 	}
 	
 	public static CustomItem getCustomItem(ItemStack is)	{
-		if(is.hasItemMeta()) {
-			ItemMeta meta = is.getItemMeta();
-			if(meta.hasCustomModelData()){
-				for(CustomItem cb : CUSTOM_ITEM_REGISTRY) {
-					if(meta.getCustomModelData() == cb.getId()) return cb;
+
+		if(is!=null) {
+			if(is.hasItemMeta()) {
+				ItemMeta meta = is.getItemMeta();
+				if(meta.hasCustomModelData()){
+					for(CustomItem cb : CUSTOM_ITEM_REGISTRY) {
+						if(is.getType() == cb.getBaseMaterial()){
+							if(meta.getCustomModelData() == cb.getId()) return cb;
+						}
+					}
 				}
 			}
 		}
@@ -395,38 +401,40 @@ public class CustomRegistry
 	}
 	
 	
-	public static CustomBlock getCustomBlockByBlock(Block b)
-	{
-		for(CustomBlock cb : CUSTOM_BLOCK_REGISTRY)
-		{
-			if(Utils.compareBlocks(cb, b))
-			{
+	public static CustomBlock getCustomBlockByBlock(Block b)	{
+		for(CustomBlock cb : CUSTOM_BLOCK_REGISTRY)		{
+			if(Utils.compareBlocks(cb, b))			{
 				return cb;
 			}
 		}
 		return null;
 	}
-	
+
+	@Nullable
 	public static boolean isItemStackItemStackOfCB(ItemStack is) {
-		if(is.hasItemMeta()) {
-			ItemMeta meta = is.getItemMeta();
-			if(meta.hasCustomModelData()){
-				for(CustomItem cb : CUSTOM_ITEM_REGISTRY) {
-					if(meta.getCustomModelData() == cb.getId()) return true;
+		if(is!=null) {
+			if(is.hasItemMeta()) {
+				ItemMeta meta = is.getItemMeta();
+				if(meta.hasCustomModelData()){
+					for(CustomItem cb : CUSTOM_ITEM_REGISTRY) {
+						if(is.getType() == cb.getBaseMaterial()){
+							if(meta.getCustomModelData() == cb.getId()) return true;
+						}
+					}
 				}
 			}
 		}
 		return false;
 	}
 	
-	public static CustomBlock getCustomBlockByStack(ItemStack is)
-	{
-		for(CustomBlock cb : CUSTOM_BLOCK_REGISTRY)
-		{
-			if(is.hasItemMeta()){
-				ItemMeta meta = is.getItemMeta();
-				if(meta.hasCustomModelData()){
-					if(meta.getCustomModelData() == cb.getId()) return cb;
+	public static CustomBlock getCustomBlockByStack(ItemStack is)	{
+		if(is.hasItemMeta()) {
+			ItemMeta meta = is.getItemMeta();
+			if(meta.hasCustomModelData()){
+				for(CustomBlock cb : CUSTOM_BLOCK_REGISTRY) {
+					if(is.getType() == cb.getBaseMaterial()){
+						if(meta.getCustomModelData() == cb.getId()) return cb;
+					}
 				}
 			}
 		}
