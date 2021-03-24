@@ -347,13 +347,13 @@ public class CustomRegistry
 		return false;
 	}
 	
-	public static CustomItem getCustomItem(ItemStack stack)
-	{
-		for(CustomItem ci : CUSTOM_ITEM_REGISTRY)
-		{
-			if(stack.getDurability() == ci.getMainModelPathEntry().getId())
-			{
-				return ci;
+	public static CustomItem getCustomItem(ItemStack is)	{
+		if(is.hasItemMeta()) {
+			ItemMeta meta = is.getItemMeta();
+			if(meta.hasCustomModelData()){
+				for(CustomItem cb : CUSTOM_ITEM_REGISTRY) {
+					if(meta.getCustomModelData() == cb.getId()) return cb;
+				}
 			}
 		}
 		return null;
@@ -407,13 +407,11 @@ public class CustomRegistry
 		return null;
 	}
 	
-	public static boolean isItemStackItemStackOfCB(ItemStack is)
-	{
-		for(CustomBlock cb : CUSTOM_BLOCK_REGISTRY)
-		{
-			if(is.hasItemMeta()){
-				ItemMeta meta = is.getItemMeta();
-				if(meta.hasCustomModelData()){
+	public static boolean isItemStackItemStackOfCB(ItemStack is) {
+		if(is.hasItemMeta()) {
+			ItemMeta meta = is.getItemMeta();
+			if(meta.hasCustomModelData()){
+				for(CustomItem cb : CUSTOM_ITEM_REGISTRY) {
 					if(meta.getCustomModelData() == cb.getId()) return true;
 				}
 			}

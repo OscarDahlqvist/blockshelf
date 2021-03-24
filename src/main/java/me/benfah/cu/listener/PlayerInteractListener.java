@@ -24,12 +24,18 @@ public class PlayerInteractListener implements Listener
 	@EventHandler
 	public void onInteract(PlayerInteractEvent e)
 	{
-		//TODO implemnt guis?
+		//TODO make the priority of actions correct
 
-		if(e.getAction() == Action.RIGHT_CLICK_BLOCK && e.getHand() == EquipmentSlot.HAND && !e.getPlayer().isSneaking()){
+		if(e.getAction() == Action.RIGHT_CLICK_BLOCK && !e.getPlayer().isSneaking()){
 			if(CustomRegistry.isCustomBlock(e.getClickedBlock())){
 				//e.setCancelled(true);
 				CustomRegistry.getCustomBlockByBlock(e.getClickedBlock()).onInteract(e);
+			}
+		}
+		if(e.getAction() == Action.RIGHT_CLICK_AIR || e.getAction() == Action.RIGHT_CLICK_BLOCK){
+			ItemStack clickItem = e.getItem();
+			if (CustomRegistry.isItemStackItemStackOfCB(clickItem)) {
+				CustomRegistry.getCustomItem(clickItem).onInteract(e, e.getHand());
 			}
 		}
 		/*if(((e.getAction() == Action.RIGHT_CLICK_BLOCK || e.getAction() == Action.RIGHT_CLICK_AIR) && e.getHand().equals(EquipmentSlot.HAND))

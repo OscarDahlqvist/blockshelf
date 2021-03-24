@@ -1,12 +1,12 @@
 package me.wilux.blockshelf.Register;
 
-import net.minecraft.server.v1_16_R2.MinecraftKey;
-import net.minecraft.server.v1_16_R2.PacketPlayOutRecipes;
-import net.minecraft.server.v1_16_R2.RecipeBookSettings;
-import net.minecraft.server.v1_16_R2.RecipeBookType;
-import org.bukkit.craftbukkit.v1_16_R2.inventory.CraftFurnaceRecipe;
-import org.bukkit.craftbukkit.v1_16_R2.inventory.CraftItemStack;
-import org.bukkit.craftbukkit.v1_16_R2.util.CraftNamespacedKey;
+import net.minecraft.server.v1_16_R3.MinecraftKey;
+import net.minecraft.server.v1_16_R3.PacketPlayOutRecipes;
+import net.minecraft.server.v1_16_R3.RecipeBookSettings;
+import net.minecraft.server.v1_16_R3.RecipeBookType;
+import org.bukkit.craftbukkit.v1_16_R3.inventory.CraftFurnaceRecipe;
+import org.bukkit.craftbukkit.v1_16_R3.inventory.CraftItemStack;
+import org.bukkit.craftbukkit.v1_16_R3.util.CraftNamespacedKey;
 import org.bukkit.inventory.FurnaceRecipe;
 
 import java.util.Collections;
@@ -25,11 +25,11 @@ public class FakeRecipe {
     public static void init(){
     }
 
-    public static net.minecraft.server.v1_16_R2.FurnaceRecipe asVanillaRecipe(FurnaceRecipe furnaceRecipe){
+    public static net.minecraft.server.v1_16_R3.FurnaceRecipe asVanillaRecipe(FurnaceRecipe furnaceRecipe){
         CraftFurnaceRecipe craftRecipe = CraftFurnaceRecipe.fromBukkitRecipe(furnaceRecipe);
 
         MinecraftKey nmsRecipeKey = CraftNamespacedKey.toMinecraft(craftRecipe.getKey());
-        return new net.minecraft.server.v1_16_R2.FurnaceRecipe(
+        return new net.minecraft.server.v1_16_R3.FurnaceRecipe(
                 nmsRecipeKey,
                 craftRecipe.getGroup(),
                 craftRecipe.toNMS(craftRecipe.getInputChoice(), false),

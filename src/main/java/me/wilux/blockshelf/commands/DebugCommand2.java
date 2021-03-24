@@ -3,14 +3,14 @@ package me.wilux.blockshelf.commands;
 import me.wilux.blockshelf.Main;
 import me.wilux.blockshelf.Register.FakeRecipe;
 import me.wilux.blockshelf.Register._DummyText;
-import net.minecraft.server.v1_16_R2.*;
+import net.minecraft.server.v1_16_R3.*;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
-import org.bukkit.craftbukkit.v1_16_R2.entity.CraftPlayer;
+import org.bukkit.craftbukkit.v1_16_R3.entity.CraftPlayer;
 import org.bukkit.entity.Player;
 import org.bukkit.event.inventory.InventoryType;
 import org.bukkit.inventory.FurnaceRecipe;
@@ -32,7 +32,7 @@ public class DebugCommand2 implements CommandExecutor {
         NamespacedKey bukkitRecipeKey = new NamespacedKey(Main.plugin, "indexer.stone");
         FurnaceRecipe recipe = new FurnaceRecipe(bukkitRecipeKey, outStack, Material.BARRIER, 0, 1);
 
-        net.minecraft.server.v1_16_R2.FurnaceRecipe nmsRecipe = FakeRecipe.asVanillaRecipe(recipe);
+        net.minecraft.server.v1_16_R3.FurnaceRecipe nmsRecipe = FakeRecipe.asVanillaRecipe(recipe);
         Collection<IRecipe<?>> fakeRecipeCollection = Arrays.asList(nmsRecipe);
 
         PacketPlayOutRecipeUpdate fakeDeclaredRecipesPacket = new PacketPlayOutRecipeUpdate(fakeRecipeCollection);

@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
+import org.bukkit.entity.Item;
 import org.bukkit.entity.Player;
 import org.bukkit.event.player.PlayerInteractEntityEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
@@ -27,52 +28,47 @@ public class CustomItem extends CustomBase
 		this.lore = lore;
 	}
 
-	public CustomItem(String name, String modelPath)
-	{
-		super(name, modelPath, Material.DIAMOND_HOE);
+	public CustomItem(String name, String modelPath) {
+		super(name, modelPath, Material.CLOCK);
+		this.title = title;
+	}
+
+	public CustomItem(String name, String modelPath, String title) {
+		super(name, modelPath, Material.CLOCK);
 		this.title = title;
 	}
 	
-	public CustomItem(String name, String modelPath, String title, List<String> lore)
-	{
-		super(name, modelPath, Material.DIAMOND_HOE);
-		this.title = title;
-		this.lore = lore;
-	}
-	
-	public CustomItem(String name, String modelPath, String title, Material baseMat)
-	{
-		super(name, modelPath, baseMat);
-		this.title = title;
-	}
-	
-	public CustomItem(String name, String modelPath, String title, List<String> lore, Material baseMat)
-	{
-		super(name, modelPath, baseMat);
+	public CustomItem(String name, String modelPath, String title, List<String> lore) {
+		super(name, modelPath, Material.CLOCK);
 		this.title = title;
 		this.lore = lore;
 	}
 	
-	public ItemStack getItem()
-	{
-		ItemStack result = new ItemStack(baseMaterial);
-		result.setDurability(getMainModelPathEntry().getId());
-		ItemMeta im = result.getItemMeta();
-		im.setUnbreakable(true);
-		if(lore != null) im.setLore(lore);
+	public CustomItem(String name, String modelPath, String title, Material baseMat) {
+		super(name, modelPath, baseMat);
+		this.title = title;
+	}
+	
+	public CustomItem(String name, String modelPath, String title, List<String> lore, Material baseMat)	{
+		super(name, modelPath, baseMat);
+		this.title = title;
+		this.lore = lore;
+	}
+	
+	public ItemStack getItem()	{
+		ItemStack is = new ItemStack(this.baseMaterial);
+		ItemMeta im = is.getItemMeta();
 		im.setDisplayName(ChatColor.RESET + title);
-		result.setItemMeta(im);
-		result = Utils.updateTags(result);
-		return result;
+		im.setCustomModelData((int)getId());
+		is.setItemMeta(im);
+		return is;
 	}
 	
-	public void onUpdate(Player p, int slot)
-	{
+	public void onUpdate(Player p, int slot)	{
 		
 	}
 	
-	public void onInteract(PlayerInteractEvent e, EquipmentSlot es)
-	{
+	public void onInteract(PlayerInteractEvent e, EquipmentSlot es)	{
 		
 	}
 	
@@ -81,8 +77,7 @@ public class CustomItem extends CustomBase
 		return null;
 	}
 	
-	public void onInteractEntity(PlayerInteractEntityEvent e)
-	{
+	public void onInteractEntity(PlayerInteractEntityEvent e)	{
 		
 	}
 	

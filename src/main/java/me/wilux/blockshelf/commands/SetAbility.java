@@ -7,7 +7,7 @@ import me.wilux.blockshelf.protocolwrapper.WrapperPlayServerAbilities;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
-import org.bukkit.craftbukkit.v1_16_R2.entity.CraftPlayer;
+import org.bukkit.craftbukkit.v1_16_R3.entity.CraftPlayer;
 import org.bukkit.entity.Player;
 
 import java.lang.reflect.InvocationTargetException;
@@ -16,7 +16,7 @@ public class SetAbility implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender commandSender, Command command, String s, String[] strings) {
         Player player = (Player)commandSender;
-        net.minecraft.server.v1_16_R2.EntityPlayer NMSPlayer = ((CraftPlayer)player).getHandle();
+        net.minecraft.server.v1_16_R3.EntityPlayer NMSPlayer = ((CraftPlayer)player).getHandle();
         NMSPlayer.abilities.canInstantlyBuild = true;
         NMSPlayer.abilities.canFly = true;
         NMSPlayer.updateAbilities();

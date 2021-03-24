@@ -1,35 +1,21 @@
 package me.wilux.blockshelf.blocks;
 
-import me.benfah.cu.api.CustomBlock;
 import me.benfah.cu.api.CustomRegistry;
-import me.wilux.blockshelf.ContainerPress;
 import me.wilux.blockshelf.Main;
 import me.wilux.blockshelf.Register._DummyText;
-import net.minecraft.server.v1_16_R2.ChatComponentText;
-import net.minecraft.server.v1_16_R2.ContainerBrewingStand;
-import net.minecraft.server.v1_16_R2.PacketPlayOutOpenWindowHorse;
+import net.minecraft.server.v1_16_R3.PacketPlayOutOpenWindowHorse;
 import org.bukkit.Bukkit;
-import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
-import org.bukkit.craftbukkit.v1_16_R2.entity.CraftHorse;
-import org.bukkit.craftbukkit.v1_16_R2.entity.CraftLlama;
-import org.bukkit.craftbukkit.v1_16_R2.entity.CraftPlayer;
-import org.bukkit.craftbukkit.v1_16_R2.event.CraftEventFactory;
-import org.bukkit.craftbukkit.v1_16_R2.inventory.CraftInventoryAbstractHorse;
-import org.bukkit.craftbukkit.v1_16_R2.inventory.CraftInventoryHorse;
-import org.bukkit.craftbukkit.v1_16_R2.inventory.CraftInventoryLlama;
-import org.bukkit.entity.*;
+import org.bukkit.craftbukkit.v1_16_R3.entity.CraftPlayer;
+import org.bukkit.entity.Entity;
+import org.bukkit.entity.Llama;
+import org.bukkit.entity.Player;
 import org.bukkit.event.inventory.InventoryCloseEvent;
 import org.bukkit.event.inventory.InventoryType;
 import org.bukkit.event.player.PlayerInteractEvent;
-import org.bukkit.inventory.HorseInventory;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
-import org.bukkit.inventory.LlamaInventory;
-import org.bukkit.potion.PotionEffect;
-import org.bukkit.potion.PotionEffectType;
-import org.bukkit.util.Vector;
 
 public class Press extends OrientableCustomBlock implements GuiAble {
     public static final String DISPLAY_NAME = "Presser";
@@ -114,16 +100,16 @@ public class Press extends OrientableCustomBlock implements GuiAble {
     }
 
     public class OpenHorse2 implements Runnable {
-        net.minecraft.server.v1_16_R2.EntityLlama NMSLlama;
+        net.minecraft.server.v1_16_R3.EntityLlama NMSLlama;
         Player player;
 
-        public OpenHorse2(net.minecraft.server.v1_16_R2.EntityLlama NMSLlama, Player player) {
+        public OpenHorse2(net.minecraft.server.v1_16_R3.EntityLlama NMSLlama, Player player) {
             this.NMSLlama = NMSLlama;
             this.player = player;
         }
 
         public void run() {
-            net.minecraft.server.v1_16_R2.EntityPlayer NMSplayer = ((CraftPlayer)player).getHandle();
+            net.minecraft.server.v1_16_R3.EntityPlayer NMSplayer = ((CraftPlayer)player).getHandle();
             int x = NMSplayer.nextContainerCounter();
 
             NMSplayer.playerConnection.sendPacket(

@@ -19,7 +19,8 @@ public class InventoryClickListener implements Listener
 			CustomGUI cg = CustomRegistry.getCustomGUIByInventory(e.getInventory());
 			
 			if(!(e.getClickedInventory() instanceof PlayerInventory))
-			if((e.getSlot() == 0 && e.getCurrentItem().hasItemMeta() ? e.getCurrentItem().getItemMeta().isUnbreakable() ? e.getCurrentItem().getDurability() > 0 : false : false) || (e.getSlot() == e.getInventory().getSize() - 9 && e.getCurrentItem().hasItemMeta() ? e.getCurrentItem().getItemMeta().isUnbreakable() ? e.getCurrentItem().getDurability() > 0 : false : false))
+				if(
+						(e.getSlot() == 0 && e.getCurrentItem().hasItemMeta() ? e.getCurrentItem().getItemMeta().isUnbreakable() ? e.getCurrentItem().getDurability() > 0 : false : false) || (e.getSlot() == e.getInventory().getSize() - 9 && e.getCurrentItem().hasItemMeta() ? e.getCurrentItem().getItemMeta().isUnbreakable() ? e.getCurrentItem().getDurability() > 0 : false : false))
 			{
 				e.setCancelled(true);
 			}

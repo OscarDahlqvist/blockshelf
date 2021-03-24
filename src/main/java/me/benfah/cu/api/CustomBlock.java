@@ -2,14 +2,18 @@ package me.benfah.cu.api;
 
 import java.lang.reflect.Method;
 
+import me.benfah.cu.util.ReflectionUtils;
+import me.benfah.cu.util.Utils;
 import me.wilux.blockshelf.Main;
-import net.minecraft.server.v1_16_R2.*;
+import net.minecraft.server.v1_16_R3.*;
 import org.bukkit.*;
 import org.bukkit.Material;
 import org.bukkit.Particle;
 import org.bukkit.World;
 import org.bukkit.block.Block;
-import org.bukkit.craftbukkit.v1_16_R2.CraftWorld;
+import org.bukkit.block.CreatureSpawner;
+import org.bukkit.craftbukkit.v1_16_R3.CraftWorld;
+import org.bukkit.entity.EntityType;
 import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.event.block.BlockPlaceEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
@@ -22,8 +26,7 @@ import org.bukkit.util.Vector;
 
 public class CustomBlock extends CustomBase
 {
-	public Plugin getPlugin()
-	{
+	public Plugin getPlugin(){
 		return plugin;
 	}
 
@@ -46,9 +49,6 @@ public class CustomBlock extends CustomBase
 		getMainModelPathEntry().setName(name);
 	}
 
-	public short getId() {
-		return getMainModelPathEntry().getId();
-	}
 	public void setId(short id) {
 		getMainModelPathEntry().setId(id);
 	}
@@ -57,10 +57,6 @@ public class CustomBlock extends CustomBase
 //	{
 //		this.pathToModel1 = path;
 //	}
-	
-	
-	
-	
 	
 	public String getModelPath()
 	{
@@ -87,76 +83,35 @@ public class CustomBlock extends CustomBase
 		setBlock(b.getLocation());
 	}
 	
-	public void onInteract(PlayerInteractEvent e)
-	{
-		
+	public void onInteract(PlayerInteractEvent e) {
 	}
 	
-	public Sound getPlaceSound()
-	{
+	public Sound getPlaceSound()	{
 		return Sound.BLOCK_STONE_HIT;
-		
 	}
 	
-	public void onBlockPlaced(BlockPlaceEvent e)
-	{
-		
-	}
-	
-	
-	
-	public void onBlockBroken(BlockBreakEvent e){
+	public void onBlockPlaced(BlockPlaceEvent e) {
 
+	}
+
+	public void onBlockBroken(BlockBreakEvent e){
 		World w = e.getPlayer().getWorld();
 		Location spawnLoc = e.getBlock().getLocation().add(new Vector(0.5,0.5,0.5));
 		w.spawnParticle(Particle.ITEM_CRACK, spawnLoc, 30,0,0,0,0.1f, getBlockItem());
 	}
-	
-	
-	
+
 	public ItemStack[] getLoot(Block b)
 	{
 		return new ItemStack[] {getBlockItem()};
 	}
 
-
-
 	public void placeBlock(Location l,BlockPlaceEvent evt) {
 		setBlock(l);
 	}
-	
-	public void setBlock(Location l)
-	{
+
+	public void setBlock(Location l) {
 		Bukkit.getScheduler().scheduleSyncDelayedTask(
 				Main.plugin, new CustomBlock.SetInstantSpawnerData(this, l), 0);
-		/*
-		Main.logger.warning("CU SETBLOCK");
-		//TODO fix this
-		Block b = l.getWorld().getBlockAt(l);
-		b.setType(Material.SPAWNER);
-
-		CreatureSpawner cs = (CreatureSpawner) b.getState();
-		cs.setSpawnedType(EntityType.ARMOR_STAND);
-		Class<?> craftCreatureSpawnerClass = ReflectionUtils.getRefClass("{cb}.block.CraftCreatureSpawner");
-		Class<?> mobSpawnerAbstractClass = ReflectionUtils.getRefClass("{nms}.MobSpawnerAbstract");
-		Class<?> mojangsonParserClass = ReflectionUtils.getRefClass("{nms}.MojangsonParser");
-
-		try {
-			Object tileEntity = setAccessible(craftCreatureSpawnerClass.getSuperclass().getDeclaredMethod("getTileEntity")).invoke(cs);
-			Object msa = tileEntity.getClass().getDeclaredMethod("getSpawner").invoke(tileEntity);
-
-			Object nbtz = mojangsonParserClass.getMethod("parse", String.class).invoke(null,
-					"{MaxNearbyEntities:0s,RequiredPlayerRange:0s,SpawnData:{id:\"minecraft:armor_stand\",ArmorItems:[{},{},{},{id:\"minecraft:" + Utils.getUnlocalizedName(baseMaterial) + "\",Count:1b,tag:{CustomModelData:"+getId()+"}}]}}");
-			mobSpawnerAbstractClass.getDeclaredMethod("a", nbtz.getClass()).invoke(msa, nbtz);
-		} catch (Exception e1) {
-			e1.printStackTrace();
-		}
-		l.getWorld().playSound(l, getPlaceSound(), 1, 1);
-		if(getClass().isAssignableFrom(IInstanceProvider.class)){
-				BlockInstance bi = BlockInstance.getBlockInstance(b);
-			bi.setMetadataValue("shouldUpdate", true);
-		}
-		*/
 	}
 	public class SetInstantSpawnerData implements Runnable {
 		CustomBlock customBlock;
@@ -203,6 +158,40 @@ public class CustomBlock extends CustomBase
 		}
 		}
 	}
+	/*public void setBlock(Location l)
+	{
+		Block b = l.getWorld().getBlockAt(l);
+		b.setType(Material.SPAWNER);
+
+		CreatureSpawner cs = (CreatureSpawner) b.getState();
+		cs.setSpawnedType(EntityType.ARMOR_STAND);
+		Class<?> craftCreatureSpawnerClass = ReflectionUtils.getRefClass("{cb}.block.CraftCreatureSpawner");
+		Class<?> mobSpawnerAbstractClass = ReflectionUtils.getRefClass("{nms}.MobSpawnerAbstract");
+		Class<?> mojangsonParserClass = ReflectionUtils.getRefClass("{nms}.MojangsonParser");
+
+		try {
+			Object tileEntity = setAccessible(craftCreatureSpawnerClass.getSuperclass().getDeclaredMethod("getTileEntity")).invoke(cs);
+			Object msa = tileEntity.getClass().getDeclaredMethod("getSpawner").invoke(tileEntity);
+
+			Object nbtz = mojangsonParserClass.getMethod("parse", String.class).invoke(null,
+					"{MaxNearbyEntities:0s,RequiredPlayerRange:0s,SpawnData:{id:\"minecraft:armor_stand\",Invisible:1,Marker:1,ArmorItems:[{},{},{},{id:\"minecraft:"
+							+ Utils.getUnlocalizedName(baseMaterial)
+							+ "\",Count:1b,tag:{CustomModelData:"
+							+ getId()
+							+ "}]}}"
+			);
+			mobSpawnerAbstractClass.getDeclaredMethod("a", nbtz.getClass()).invoke(msa, nbtz);
+		} catch (Exception e1) {
+			e1.printStackTrace();
+		}
+
+		l.getWorld().playSound(l, getPlaceSound(), 1, 1);
+		if(getClass().isAssignableFrom(IInstanceProvider.class))
+		{
+			BlockInstance bi = BlockInstance.getBlockInstance(b);
+			bi.setMetadataValue("shouldUpdate", true);
+		}
+	}*/
 	
 	public Recipe getRecipe()
 	{

@@ -9,14 +9,14 @@ import java.util.Arrays;
 import java.util.Map.Entry;
 
 import me.wilux.blockshelf.Main;
-import net.minecraft.server.v1_16_R2.*;
+import net.minecraft.server.v1_16_R3.*;
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.block.CreatureSpawner;
 import org.bukkit.command.CommandSender;
-import org.bukkit.craftbukkit.v1_16_R2.CraftWorld;
+import org.bukkit.craftbukkit.v1_16_R3.CraftWorld;
 import org.bukkit.event.player.PlayerEvent;
 import org.bukkit.inventory.EquipmentSlot;
 import org.bukkit.inventory.ItemFlag;
@@ -158,11 +158,6 @@ public class Utils
 	public static ItemStack updateTags(ItemStack stack)
 	{
 		ItemMeta meta = stack.getItemMeta();
-		meta.addItemFlags(ItemFlag.HIDE_UNBREAKABLE);
-		meta.addItemFlags(ItemFlag.HIDE_ATTRIBUTES);
-		meta.addItemFlags(ItemFlag.HIDE_DESTROYS);
-		meta.addItemFlags(ItemFlag.HIDE_PLACED_ON);
-		meta.addItemFlags(ItemFlag.HIDE_POTION_EFFECTS);
 		stack.setItemMeta(meta);
 		return stack;
 	}

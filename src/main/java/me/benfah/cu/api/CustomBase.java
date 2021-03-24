@@ -31,29 +31,26 @@ public class CustomBase
 	
 	
 	
-	public CustomBase(InformationEntry entry, Material baseMaterial)
-	{
+	public CustomBase(InformationEntry entry, Material baseMaterial) {
 		mpe.add(entry);
 		this.baseMaterial = baseMaterial;
-		
 	}
 	
-	public CustomBase(String name, String modelPath, Material baseMaterial)
-	{
+	public CustomBase(String name, String modelPath, Material baseMaterial) 	{
 		mpe.add(new InformationEntry(modelPath, name));
 		this.baseMaterial = baseMaterial;
-		
 	}
 	
 	public Material getBaseMaterial()
 	{
 		return baseMaterial;
 	}
-	
-	
 
-	public InformationEntry getMainModelPathEntry()
-	{
+	public short getId() {
+		return getMainModelPathEntry().getId();
+	}
+
+	public InformationEntry getMainModelPathEntry()	{
 		return mpe.get(0);
 	}
 	

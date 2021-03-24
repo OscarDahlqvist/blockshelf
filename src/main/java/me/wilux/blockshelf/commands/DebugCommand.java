@@ -1,23 +1,17 @@
 package me.wilux.blockshelf.commands;
 
 import me.wilux.blockshelf.Register.FakeRecipe;
-import me.wilux.blockshelf.Register._DummyText;
-import net.minecraft.server.v1_16_R2.IRecipe;
-import net.minecraft.server.v1_16_R2.PacketPlayOutRecipeUpdate;
-import net.minecraft.server.v1_16_R2.PacketPlayOutRecipes;
+import net.minecraft.server.v1_16_R3.IRecipe;
+import net.minecraft.server.v1_16_R3.PacketPlayOutRecipeUpdate;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
-import org.bukkit.craftbukkit.v1_16_R2.CraftServer;
-import org.bukkit.craftbukkit.v1_16_R2.entity.CraftPlayer;
+import org.bukkit.craftbukkit.v1_16_R3.CraftServer;
+import org.bukkit.craftbukkit.v1_16_R3.entity.CraftPlayer;
 import org.bukkit.entity.Player;
-import org.bukkit.event.inventory.InventoryType;
-import org.bukkit.inventory.InventoryHolder;
 
-import java.util.Arrays;
 import java.util.Collection;
-import java.util.Collections;
 
 public class DebugCommand implements CommandExecutor {
     @Override
@@ -33,13 +27,12 @@ public class DebugCommand implements CommandExecutor {
 
         //TODO: keep recipe book settings
 
-        //this somehow updates the bookkm which makes no sense but sure
+        //this somehow updates the book which makes no sense but sure
         ((CraftPlayer)player).getHandle().playerConnection.sendPacket(FakeRecipe.PACKET_RECIPES_EMPTY);
 
 
         //removed code, left for reference
         {
-            if(true);
         /*
         PacketContainer recipes = PacketTesting.superBadUnsafeRecipesAtBoot;
         try {
