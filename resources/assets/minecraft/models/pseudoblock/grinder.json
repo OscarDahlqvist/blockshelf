@@ -1,0 +1,13 @@
+{
+  "parent": "pseudoblock/cube",
+	"textures": {
+		"particle": "block/grinder",
+		"north": "block/grinder",
+		"south": "block/grinder",
+		"west": "block/machine_generic_side",
+		"east": "block/machine_generic_side",
+		"up": "block/machine_generic_top",
+		"down": "block/machine_generic_bottom"
+  }
+}
+

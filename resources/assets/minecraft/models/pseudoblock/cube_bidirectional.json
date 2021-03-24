@@ -1,0 +1,12 @@
+{
+    "parent": "pseudoblock/cube",
+    "textures": {
+        "particle": "#front",
+        "down": "#down",
+        "up": "#up",
+        "north": "#front",
+        "east": "#side",
+        "south": "#front",
+        "west": "#side"
+    }
+}

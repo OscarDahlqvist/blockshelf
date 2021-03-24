@@ -1,0 +1,13 @@
+{
+  "parent": "pseudoblock/cube",
+	"textures": {
+		"particle": "block/plater",
+		"north": "block/machine_generic_side",
+		"south": "block/machine_generic_side",
+		"west": "block/plater",
+		"east": "block/plater",
+		"up": "block/machine_generic_top",
+		"down": "block/machine_generic_bottom"
+  }
+}
+

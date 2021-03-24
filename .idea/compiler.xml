@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <bytecodeTargetLevel>
+      <module name="BlockShelf" target="1.8" />
+      <module name="CustomUtils" target="1.8" />
+      <module name="Maven" target="1.5" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

@@ -1,0 +1,7 @@
+{
+  "parent": "pseudoblock/cube_all",
+	"textures": {
+		"all": "block/d1"
+  }
+}
+

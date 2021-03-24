@@ -1,0 +1,77 @@
+{
+	"credit": "Made with Blockbench",
+	"textures": {
+		"0": "font/ascii",
+		"1": "text/button",
+		"particle": "font/ascii"
+	},
+	"elements": [
+		{
+			"from": [21.5, 0.25, 15.5],
+			"to": [23, 2.25, 16],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 4, 8]},
+			"faces": {
+				"south": {"uv": [6, 3, 6.75, 4], "texture": "#0"}
+			}
+		},
+		{
+			"from": [23, 0.25, 15.5],
+			"to": [24.5, 2.25, 16],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 4, 8]},
+			"faces": {
+				"south": {"uv": [4, 3, 4.75, 4], "texture": "#0"}
+			}
+		},
+		{
+			"from": [20.5, 0.25, 15.5],
+			"to": [21.5, 2.25, 16],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 4, 8]},
+			"faces": {
+				"south": {"uv": [10, 2, 10.5, 3], "texture": "#0"}
+			}
+		},
+		{
+			"name": "digit2",
+			"from": [19, 0.25, 15.5],
+			"to": [20.5, 2.25, 16],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 4, 8]},
+			"faces": {
+				"south": {"uv": [4, 3, 4.75, 4], "texture": "#0"}
+			}
+		},
+		{
+			"name": "digit1",
+			"from": [17.5, 0.25, 15.5],
+			"to": [19, 2.25, 16],
+			"rotation": {"angle": 0, "axis": "x", "origin": [8, 4, 8]},
+			"faces": {
+				"south": {"uv": [4, 3, 4.75, 4], "texture": "#0"}
+			}
+		},
+		{
+			"name": "digit2",
+			"from": [16, 0.25, 15.5],
+			"to": [17.5, 2.25, 16],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 4, 8]},
+			"faces": {
+				"south": {"uv": [11, 2, 11.75, 3], "texture": "#0"}
+			}
+		},
+		{
+			"name": "digit3",
+			"from": [-3.5, -4, 15.5],
+			"to": [0.5, 0, 16],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 4, 8]},
+			"faces": {
+				"south": {"uv": [0, 0, 16, 16], "texture": "#1"}
+			}
+		}
+	],
+	"gui_light": "front",
+	"display": {
+		"gui": {
+			"translation": [38, 40, 0],
+			"scale": [4, 4, 4]
+		}
+	}
+}

@@ -1,0 +1,81 @@
+{
+   "providers": [
+      {
+         "type": "ttf",
+         "note": "Many thanks to AmberW#4615 for this invaluable resource",
+         "file": "negative_spaces.ttf",
+         "shift": [
+            0.0,
+            0.0
+         ],
+         "size": 10.0,
+         "oversample": 1.0
+      },
+      {
+         "type": "bitmap",
+         "file": "text/grindstone.png",
+         "ascent": 11,
+         "height": 166,
+         "chars": [
+            "\ue00b"
+         ]
+      },
+      {
+         "type": "bitmap",
+         "file": "text/indexer.png",
+         "ascent": 13,
+         "height": 166,
+         "chars": [
+            "\ue00c"
+         ]
+			},
+      {
+         "type": "bitmap",
+         "file": "text/electric_furnace.png",
+         "ascent": 13,
+         "height": 166,
+         "chars": [
+            "\ue00d"
+         ]
+      },
+      {
+         "type": "bitmap",
+         "file": "text/press.png",
+         "ascent": 13,
+         "height": 166,
+         "chars": [
+            "\ue00e"
+         ]
+      },
+      {
+         "type": "bitmap",
+         "file": "text/indexer_w/big_right_5_digits.png",
+         "ascent": 13,
+         "height": 166,
+         "chars": [
+            "\ue00f"
+         ]
+      },
+      {
+         "type": "bitmap",
+         "file": "text/big_book.png",
+         "ascent": 13,
+         "height": 166,
+         "chars": [
+            "\ue01b"
+         ]
+      },
+      {
+         "type": "bitmap",
+         "file": "text/indexer_w/text_center.png",
+         "ascent": 6,
+         "height": 13,
+         "chars": [
+            "\ue000\ue001\ue002\ue003\ue004\ue005\ue006\ue007\ue008\ue009\ue00a",
+            "\ue010\ue011\ue012\ue013\ue014\ue015\ue016\ue017\ue018\ue019\ue01a",
+            "\ue020\ue021\ue022\ue023\ue024\ue025\ue026\ue027\ue028\ue029\ue02a",
+            "\ue030\ue031\ue032\ue033\ue034\ue035\ue036\ue037\ue038\ue039\ue03a"
+         ]
+      }
+   ]
+}

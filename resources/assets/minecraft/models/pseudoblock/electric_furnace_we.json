@@ -1,0 +1,13 @@
+{
+  "parent": "pseudoblock/cube",
+	"textures": {
+		"particle": "block/electric_furnace",
+		"north": "block/machine_generic_bottomed_side",
+		"south": "block/machine_generic_bottomed_side",
+		"west": "block/electric_furnace",
+		"east": "block/electric_furnace",
+		"up": "block/machine_generic_bottom",
+		"down": "block/machine_generic_top"
+  }
+}
+

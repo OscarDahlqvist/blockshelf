@@ -1,0 +1,13 @@
+{
+  "parent": "pseudoblock/cube",
+	"textures": {
+		"particle": "block/coal_generator",
+		"north": "block/coal_generator",
+		"south": "block/coal_generator",
+		"west": "block/machine_generic_bottomed_side",
+		"east": "block/machine_generic_bottomed_side",
+		"up": "block/machine_generic_bottom",
+		"down": "block/machine_generic_top"
+  }
+}
+
