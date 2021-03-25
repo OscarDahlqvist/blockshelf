@@ -21,11 +21,9 @@ import me.benfah.cu.api.CustomItem;
 import me.benfah.cu.api.CustomRegistry;
 import me.benfah.cu.util.Utils;
 
-public class PlayerInteractListener implements Listener
-{
+public class PlayerInteractListener implements Listener {
 	@EventHandler
-	public void onInteract(PlayerInteractEvent e)
-	{
+	public void onInteract(PlayerInteractEvent e) {
 		//TODO make the priority of actions correct
 
 		//WIRE SPOOL always has priority
@@ -41,6 +39,7 @@ public class PlayerInteractListener implements Listener
 			}
 		}
 
+		//Click on block
 		if(e.getAction() == Action.RIGHT_CLICK_BLOCK && !e.getPlayer().isSneaking()){
 			if(CustomRegistry.isCustomBlock(e.getClickedBlock())){
 				//e.setCancelled(true);

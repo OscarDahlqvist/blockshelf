@@ -5,6 +5,11 @@ import com.comphenix.protocol.events.ListenerPriority;
 import com.comphenix.protocol.events.PacketAdapter;
 import com.comphenix.protocol.events.PacketContainer;
 import com.comphenix.protocol.events.PacketEvent;
+import com.comphenix.protocol.wrappers.nbt.NbtBase;
+import com.comphenix.protocol.wrappers.nbt.NbtCompound;
+import me.wilux.blockshelf.protocolwrapper.WrapperPlayServerMapChunk;
+
+import java.util.List;
 
 import static me.wilux.blockshelf._delete_nmsblocks.UnusedProtocol.printAllEventProperties;
 
@@ -61,6 +66,31 @@ public class PacketTesting {
                         }
                     }
                 });
+        Main.protocolManager.addPacketListener(new PacketAdapter(Main.plugin, ListenerPriority.NORMAL,PacketType.Play.Server.MAP_CHUNK) {
+            @Override
+            public void onPacketSending(PacketEvent event) {
+                if (event.getPacketType() == PacketType.Play.Server.MAP_CHUNK) {
+                    PacketContainer p = event.getPacket();
+                    WrapperPlayServerMapChunk wp = new WrapperPlayServerMapChunk(p);
+
+                    int chunkX = wp.getChunkX();
+                    int chunkZ = wp.getChunkZ();
+
+                    List<NbtBase<?>> tileEntities = wp.getTileEntities();
+                    if(!tileEntities.isEmpty()){
+                        for (NbtBase nbtBase: tileEntities) {
+                            NbtCompound nbt = (NbtCompound)nbtBase;
+                            String id = (String) nbt.getValue("id").getValue();
+                            int x = (int) nbt.getValue("x").getValue();
+                            int y = (int) nbt.getValue("y").getValue();
+                            int z = (int) nbt.getValue("z").getValue();
+                            Main.logger.warning("Chunk["+chunkX+","+chunkZ+"] Packet TileEntity:'"+id+"' at ["+x+","+y+","+z+"]");
+                        }
+                        //printAllEventProperties(event);
+                    }
+                }
+            }
+        });
         /*Main.protocolManager.addPacketListener(
                 new PacketAdapter(Main.plugin, ListenerPriority.NORMAL, PacketType.Play.Client.BLOCK_DIG) {
                     @Override

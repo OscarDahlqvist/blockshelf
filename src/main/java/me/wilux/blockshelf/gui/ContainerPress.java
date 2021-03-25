@@ -1,4 +1,4 @@
-package me.wilux.blockshelf;
+package me.wilux.blockshelf.gui;
 
 import net.minecraft.server.v1_16_R3.*;
 

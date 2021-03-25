@@ -141,7 +141,7 @@ public class CustomBlock extends CustomBase
 			headItemNbt.setString("id",Material.BARRIER.getKey().toString());
 			headItemNbt.setInt("Count",1);
 			NBTTagCompound itemTagNbt = new NBTTagCompound();
-			itemTagNbt.setInt("CustomModelData",customBlock.getId());
+			itemTagNbt.setInt("CustomModelData", customBlock.getId());
 			headItemNbt.set("tag",itemTagNbt);
 
 			NBTTagList nbtTagList = new NBTTagList();
@@ -154,7 +154,7 @@ public class CustomBlock extends CustomBase
 
 			data.getEntity().set("ArmorItems",nbtTagList);
 		} catch (Exception e) {
-			Main.logger.warning("oooops");
+			e.printStackTrace();
 		}
 		}
 	}
