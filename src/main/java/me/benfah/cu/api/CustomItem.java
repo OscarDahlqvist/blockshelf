@@ -15,8 +15,7 @@ import org.bukkit.inventory.meta.ItemMeta;
 
 import me.benfah.cu.util.Utils;
 
-public class CustomItem extends CustomBase
-{
+public class CustomItem extends CustomBase {
 	
 	protected String title;
 	protected List<String> lore;
@@ -70,6 +69,10 @@ public class CustomItem extends CustomBase
 	
 	public void onInteract(PlayerInteractEvent e, EquipmentSlot es)	{
 		
+	}
+
+	public void onUseItem(PlayerInteractEvent e, EquipmentSlot es){
+
 	}
 	
 	public Recipe getRecipe()

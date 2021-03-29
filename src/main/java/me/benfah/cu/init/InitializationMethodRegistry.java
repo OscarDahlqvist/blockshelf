@@ -2,9 +2,6 @@ package me.benfah.cu.init;
 
 import java.util.HashMap;
 
-import me.benfah.cu.init.impl.DropBoxInitializationMethod;
-import me.benfah.cu.init.impl.MinePackInitializationMethod;
-
 public class InitializationMethodRegistry
 {
 	private static HashMap<String, IInitializationMethod> test = new HashMap<>();
@@ -18,13 +15,13 @@ public class InitializationMethodRegistry
 	{
 		test.remove(name);
 	}
-	
+
+	/*
 	public static void initMethods()
 	{
 		register("dropbox", new DropBoxInitializationMethod());
 		register("minepack", new MinePackInitializationMethod());
-
-	}
+	}*/
 	
 	public static IInitializationMethod getMethod(String name)
 	{

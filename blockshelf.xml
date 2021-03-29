@@ -158,7 +158,7 @@
     <jar destfile="${temp.jar.path.BlockShelf.jar}" duplicate="preserve" filesetmanifest="mergewithoutmain">
       <zipfileset dir="${blockshelf.output.dir}"/>
       <zipfileset src="${basedir}/../../_buildtools/spigot-1.15.2.jar"/>
-      <zipfileset file="${basedir}/plugin.yml"/>
+      <zipfileset file="/plugin.yml"/>
     </jar>
     <copy file="${temp.jar.path.BlockShelf.jar}" tofile="${artifact.temp.output.blockshelf:jar}/BlockShelf.jar"/>
   </target>

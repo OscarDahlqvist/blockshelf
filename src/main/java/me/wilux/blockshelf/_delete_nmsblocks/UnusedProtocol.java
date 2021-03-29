@@ -7,17 +7,9 @@ import com.comphenix.protocol.events.PacketContainer;
 import com.comphenix.protocol.events.PacketEvent;
 import com.comphenix.protocol.reflect.StructureModifier;
 import com.comphenix.protocol.wrappers.WrappedChatComponent;
-import com.mojang.datafixers.types.Func;
-import com.sun.xml.internal.bind.v2.runtime.reflect.Lister;
 import me.wilux.blockshelf.Main;
 import org.bukkit.Bukkit;
 import org.bukkit.NamespacedKey;
-import org.bukkit.command.CommandSender;
-import org.bukkit.entity.Player;
-
-import java.awt.*;
-import java.lang.reflect.InvocationTargetException;
-import java.util.concurrent.Callable;
 import java.util.function.Function;
 
 public class UnusedProtocol {

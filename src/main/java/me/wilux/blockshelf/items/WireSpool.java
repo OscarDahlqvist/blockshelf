@@ -131,6 +131,7 @@ public class WireSpool extends CustomItem {
         return (Tag.FENCES.getValues().contains(m) || m == Material.SPAWNER);
     }
 }
+
 class HangingPlaceListener implements Listener {
     @EventHandler
     public void onHangingPlaceEvent(HangingPlaceEvent e) {

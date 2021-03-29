@@ -32,8 +32,10 @@ public class CustomUtils extends JavaPlugin
 		Config.onEnable();
 
 		//File downloading goes here v
+		/*
 		InitializationMethodRegistry.initMethods();
 		InitializationMethodProvider.setCurrentMethod(Config.getConfiguration().getString("init-method"));
+		*/
 
 		Bukkit.getPluginManager().registerEvents(new SlotChangeListener(), this);
 		Bukkit.getPluginManager().registerEvents(new PlayerInteractEntityListener(), this);

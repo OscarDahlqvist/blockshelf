@@ -2,15 +2,16 @@ package me.wilux.blockshelf;
 
 import com.comphenix.protocol.ProtocolLibrary;
 import com.comphenix.protocol.ProtocolManager;
-import javassist.CannotCompileException;
-import javassist.NotFoundException;
+import com.comphenix.protocol.utility.ByteBuddyFactory;
 import me.benfah.cu.api.CustomBlock;
 import me.benfah.cu.api.CustomRegistry;
 import me.wilux.blockshelf.blocks.*;
 import me.wilux.blockshelf.commands.DebugCommand;
 import me.wilux.blockshelf.commands.DebugCommand2;
 import me.wilux.blockshelf.commands.SetAbility;
+import me.wilux.blockshelf.items.WateringCan;
 import me.wilux.blockshelf.items.WireSpool;
+import me.wilux.blockshelf.nms_hacks.PlayerHacks;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -37,8 +38,12 @@ public static JavaPlugin plugin;
         protocolManager = ProtocolLibrary.getProtocolManager();
         logger = getLogger();
 
-        currentlyOpenInventory = new HashMap<Player, GuiAble>();
+        PlayerHacks.hackPlayer();
+
         super.onEnable();
+
+        //TODO, move to TempStorage
+        currentlyOpenInventory = new HashMap<Player, GuiAble>();
 
         this.getCommand("rpsend").setExecutor(new DebugCommand());
         this.getCommand("rpdelete").setExecutor(new DebugCommand2());
@@ -54,6 +59,7 @@ public static JavaPlugin plugin;
         Grinder.register();
 
         WireSpool.register();
+        WateringCan.register();
 
         PacketTesting.init();
         CustomRecipes.init();

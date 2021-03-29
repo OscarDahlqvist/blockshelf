@@ -335,21 +335,11 @@ public class CustomRegistry
 			return false;
 	}
 	
-	public static boolean isCustomItem(ItemStack stack)
-	{
-		for(CustomItem ci : CUSTOM_ITEM_REGISTRY)
-		{
-			if(stack.getDurability() == ci.getMainModelPathEntry().getId())
-			if(stack.getItemMeta().isUnbreakable() == true)
-			{
-				return true;
-			}
-		}
-		return false;
+	public static boolean isCustomItem(ItemStack is) {
+		return getCustomItem(is) != null;
 	}
 	
 	public static CustomItem getCustomItem(ItemStack is)	{
-
 		if(is!=null) {
 			if(is.hasItemMeta()) {
 				ItemMeta meta = is.getItemMeta();
@@ -408,23 +398,6 @@ public class CustomRegistry
 			}
 		}
 		return null;
-	}
-
-	@Nullable
-	public static boolean isItemStackItemStackOfCB(ItemStack is) {
-		if(is!=null) {
-			if(is.hasItemMeta()) {
-				ItemMeta meta = is.getItemMeta();
-				if(meta.hasCustomModelData()){
-					for(CustomItem cb : CUSTOM_ITEM_REGISTRY) {
-						if(is.getType() == cb.getBaseMaterial()){
-							if(meta.getCustomModelData() == cb.getId()) return true;
-						}
-					}
-				}
-			}
-		}
-		return false;
 	}
 	
 	public static CustomBlock getCustomBlockByStack(ItemStack is)	{

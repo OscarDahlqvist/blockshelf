@@ -1,25 +1,14 @@
 package me.benfah.cu.listener;
 
-import me.wilux.blockshelf.Main;
 import me.wilux.blockshelf.items.WireSpool;
-import org.apache.http.impl.conn.Wire;
-import org.bukkit.GameMode;
-import org.bukkit.Location;
-import org.bukkit.block.Block;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
-import org.bukkit.event.player.PlayerEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
-import org.bukkit.inventory.EquipmentSlot;
-import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
-import org.bukkit.inventory.meta.ItemMeta;
 
-import me.benfah.cu.api.CustomBlock;
 import me.benfah.cu.api.CustomItem;
 import me.benfah.cu.api.CustomRegistry;
-import me.benfah.cu.util.Utils;
 
 public class PlayerInteractListener implements Listener {
 	@EventHandler
@@ -48,8 +37,9 @@ public class PlayerInteractListener implements Listener {
 		}
 		if(e.getAction() == Action.RIGHT_CLICK_AIR || e.getAction() == Action.RIGHT_CLICK_BLOCK){
 			ItemStack clickItem = e.getItem();
-			if (CustomRegistry.isItemStackItemStackOfCB(clickItem)) {
-				CustomRegistry.getCustomItem(clickItem).onInteract(e, e.getHand());
+			CustomItem cb = CustomRegistry.getCustomItem(clickItem);
+			if (cb != null) {
+				cb.onInteract(e, e.getHand());
 			}
 		}
 		/*if(((e.getAction() == Action.RIGHT_CLICK_BLOCK || e.getAction() == Action.RIGHT_CLICK_AIR) && e.getHand().equals(EquipmentSlot.HAND))

@@ -9,8 +9,7 @@ import me.benfah.cu.util.Config;
 public class InitializationMethodProvider
 {
 
-	public static IInitializationMethod getCurrentMethod()
-	{
+	public static IInitializationMethod getCurrentMethod()	{
 		return InitializationMethodRegistry.getMethod(Config.getConfiguration().getString("init-method"));
 	}
 

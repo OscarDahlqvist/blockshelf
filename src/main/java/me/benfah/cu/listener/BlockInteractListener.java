@@ -13,7 +13,6 @@ import org.bukkit.inventory.EquipmentSlot;
 
 import me.benfah.cu.api.CustomBlock;
 import me.benfah.cu.api.CustomRegistry;
-import net.lingala.zip4j.util.Zip4jUtil;
 
 public class BlockInteractListener implements Listener
 {
