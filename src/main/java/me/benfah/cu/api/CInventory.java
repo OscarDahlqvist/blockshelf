@@ -1,9 +1,7 @@
 package me.benfah.cu.api;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.ListIterator;
-
+import me.benfah.cu.util.JavassistUtil;
+import me.benfah.cu.util.ReflectionUtils;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.entity.HumanEntity;
@@ -13,8 +11,9 @@ import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.InventoryHolder;
 import org.bukkit.inventory.ItemStack;
 
-import me.benfah.cu.util.JavassistUtil;
-import me.benfah.cu.util.ReflectionUtils;
+import java.util.HashMap;
+import java.util.List;
+import java.util.ListIterator;
 
 public class CInventory{
 

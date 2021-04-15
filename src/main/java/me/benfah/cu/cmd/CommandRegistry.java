@@ -1,13 +1,9 @@
 package me.benfah.cu.cmd;
 
+import me.benfah.cu.cmd.impl.*;
+
 import java.util.ArrayList;
 import java.util.List;
-
-import me.benfah.cu.cmd.impl.IBlockCommand;
-import me.benfah.cu.cmd.impl.IChooseMethodCommand;
-import me.benfah.cu.cmd.impl.IItemCommand;
-import me.benfah.cu.cmd.impl.IReloadCommand;
-import me.benfah.cu.cmd.impl.IRepackageCommand;
 
 public class CommandRegistry
 {

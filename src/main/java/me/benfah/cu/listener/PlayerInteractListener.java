@@ -1,20 +1,24 @@
 package me.benfah.cu.listener;
 
-import me.wilux.blockshelf.items.WireSpool;
+import me.benfah.cu.api.CustomItem;
+import me.benfah.cu.api.CustomRegistry;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
-import org.bukkit.event.block.Action;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.ItemStack;
 
-import me.benfah.cu.api.CustomItem;
-import me.benfah.cu.api.CustomRegistry;
-
 public class PlayerInteractListener implements Listener {
 	@EventHandler
-	public void onInteract(PlayerInteractEvent e) {
+	public void onPlayerInteractEvent(PlayerInteractEvent e) {
 		//TODO make the priority of actions correct
 
+		ItemStack clickItem = e.getItem();
+		CustomItem ci = CustomRegistry.getCustomItem(clickItem);
+		if (ci!=null) {
+			ci.onPlayerInteractEvent(e);
+		}
+
+		/*
 		//WIRE SPOOL always has priority
 		if(e.getAction() == Action.RIGHT_CLICK_AIR || e.getAction() == Action.RIGHT_CLICK_BLOCK){
 			ItemStack clickItem = e.getItem();

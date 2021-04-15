@@ -1,16 +1,13 @@
 package me.benfah.cu.listener;
 
-import java.io.UnsupportedEncodingException;
-
-import org.bukkit.Bukkit;
-import org.bukkit.event.EventHandler;
-import org.bukkit.event.Listener;
-import org.bukkit.event.player.PlayerJoinEvent;
-
 import me.benfah.cu.api.InitializationMethodProvider;
 import me.benfah.cu.main.CustomUtils;
 import me.benfah.cu.util.Config;
 import me.benfah.cu.util.InitializationState;
+import org.bukkit.Bukkit;
+import org.bukkit.event.EventHandler;
+import org.bukkit.event.Listener;
+import org.bukkit.event.player.PlayerJoinEvent;
 
 public class PlayerJoinListener implements Listener
 {

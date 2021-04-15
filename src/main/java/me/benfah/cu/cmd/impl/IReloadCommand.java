@@ -1,15 +1,12 @@
 package me.benfah.cu.cmd.impl;
 
+import me.benfah.cu.cmd.ISubCommand;
+import me.benfah.cu.util.Config;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
-import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.permissions.Permission;
 import org.bukkit.permissions.PermissionDefault;
-
-import me.benfah.cu.cmd.ISubCommand;
-import me.benfah.cu.main.CustomUtils;
-import me.benfah.cu.util.Config;
 
 public class IReloadCommand implements ISubCommand
 {

@@ -2,7 +2,6 @@ package me.benfah.cu.listener;
 
 import me.benfah.cu.api.CustomBlock;
 import me.benfah.cu.api.CustomRegistry;
-import me.wilux.blockshelf.Main;
 import org.bukkit.GameMode;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;

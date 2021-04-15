@@ -1,13 +1,11 @@
 package me.benfah.cu.api;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
-
+import me.benfah.cu.util.InformationEntry;
 import org.bukkit.Material;
 import org.bukkit.plugin.Plugin;
 
-import me.benfah.cu.util.InformationEntry;
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class CustomBase

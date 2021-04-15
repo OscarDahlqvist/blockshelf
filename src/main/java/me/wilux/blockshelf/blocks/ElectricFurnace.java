@@ -1,21 +1,15 @@
 package me.wilux.blockshelf.blocks;
 
-import me.benfah.cu.api.CustomBlock;
 import me.benfah.cu.api.CustomRegistry;
 import me.wilux.blockshelf.Main;
 import me.wilux.blockshelf.Register._DummyText;
 import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
-import org.bukkit.event.block.Action;
 import org.bukkit.event.inventory.InventoryType;
 import org.bukkit.event.player.PlayerInteractEvent;
-import org.bukkit.inventory.Inventory;
-import org.bukkit.inventory.InventoryHolder;
 import org.bukkit.inventory.ItemStack;
-import org.bukkit.inventory.meta.ItemMeta;
 
 public class ElectricFurnace extends OrientableCustomBlock{
     public static final String DISPLAY_NAME = "Electric Furnace";

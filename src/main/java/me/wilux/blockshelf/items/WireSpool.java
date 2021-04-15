@@ -5,22 +5,21 @@ import me.benfah.cu.api.CustomRegistry;
 import me.wilux.blockshelf.Config;
 import me.wilux.blockshelf.Main;
 import me.wilux.blockshelf.TempStorage;
-import me.wilux.blockshelf.nms_hacks.EntityFixedLeashKnot;
 import me.wilux.blockshelf.nms_hacks.EntityFixedLeashTarget;
 import net.md_5.bungee.api.ChatMessageType;
 import net.md_5.bungee.api.chat.BaseComponent;
 import net.md_5.bungee.api.chat.TextComponent;
 import org.bukkit.*;
 import org.bukkit.block.Block;
-import org.bukkit.craftbukkit.v1_16_R3.entity.CraftArmorStand;
 import org.bukkit.craftbukkit.v1_16_R3.entity.CraftEntity;
-import org.bukkit.craftbukkit.v1_16_R3.entity.CraftLivingEntity;
-import org.bukkit.entity.*;
+import org.bukkit.entity.Entity;
+import org.bukkit.entity.EntityType;
+import org.bukkit.entity.Hanging;
+import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.hanging.HangingPlaceEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
-import org.bukkit.inventory.EquipmentSlot;
 import org.bukkit.inventory.ItemStack;
 
 import java.math.RoundingMode;
@@ -43,7 +42,7 @@ public class WireSpool extends CustomItem {
     }
 
     @Override
-    public void onInteract(PlayerInteractEvent e, EquipmentSlot es) {
+    public void onPlayerInteractEvent(PlayerInteractEvent e) {
         Player ply = e.getPlayer();
         if(e.getClickedBlock() != null){
             Block clickedBlock = e.getClickedBlock();

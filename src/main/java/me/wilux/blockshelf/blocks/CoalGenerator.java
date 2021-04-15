@@ -2,11 +2,9 @@ package me.wilux.blockshelf.blocks;
 
 import me.benfah.cu.api.CustomRegistry;
 import me.wilux.blockshelf.Main;
-import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.inventory.ItemStack;
-import org.bukkit.inventory.meta.ItemMeta;
 
 public class CoalGenerator extends OrientableCustomBlock {
     public static final String DISPLAY_NAME = "Coal Generator";

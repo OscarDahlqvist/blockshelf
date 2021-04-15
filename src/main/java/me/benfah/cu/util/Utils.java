@@ -1,33 +1,26 @@
 package me.benfah.cu.util;
 
-import java.io.PrintWriter;
-import java.lang.reflect.Field;
-import java.lang.reflect.Method;
-import java.math.BigDecimal;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Map.Entry;
-
-import me.wilux.blockshelf.Main;
-import net.minecraft.server.v1_16_R3.*;
+import me.benfah.cu.api.*;
+import net.minecraft.server.v1_16_R3.BlockPosition;
+import net.minecraft.server.v1_16_R3.NBTTagCompound;
+import net.minecraft.server.v1_16_R3.NBTTagList;
+import net.minecraft.server.v1_16_R3.TileEntityMobSpawner;
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
-import org.bukkit.block.CreatureSpawner;
 import org.bukkit.command.CommandSender;
 import org.bukkit.craftbukkit.v1_16_R3.CraftWorld;
 import org.bukkit.event.player.PlayerEvent;
 import org.bukkit.inventory.EquipmentSlot;
-import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
-import me.benfah.cu.api.CustomBase;
-import me.benfah.cu.api.CustomBlock;
-import me.benfah.cu.api.CustomGUI;
-import me.benfah.cu.api.CustomItem;
-import me.benfah.cu.api.CustomRegistry;
+import java.io.PrintWriter;
+import java.lang.reflect.Method;
+import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.Map.Entry;
 
 public class Utils
 {

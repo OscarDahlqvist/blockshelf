@@ -1,15 +1,5 @@
 package me.wilux.blockshelf._delete_nmsblocks;
 
-import com.comphenix.protocol.PacketType;
-import com.comphenix.protocol.events.ListenerPriority;
-import com.comphenix.protocol.events.PacketAdapter;
-import com.comphenix.protocol.events.PacketEvent;
-import com.comphenix.protocol.reflect.StructureModifier;
-import com.comphenix.protocol.wrappers.WrappedBlockData;
-import me.wilux.blockshelf.Main;
-import net.minecraft.server.v1_16_R3.*;
-import org.bukkit.Material;
-
 public class NMStesting {
 /*
     //public static final RegistryMaterials REGISTRY = new RegistryBlocks("air");

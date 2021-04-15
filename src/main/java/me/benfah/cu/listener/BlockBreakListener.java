@@ -1,31 +1,17 @@
 package me.benfah.cu.listener;
 
-import java.lang.reflect.Field;
-import java.util.Map;
-
-import me.benfah.cu.util.Utils;
-import me.wilux.blockshelf.Main;
-import org.bukkit.Bukkit;
-import org.bukkit.GameMode;
-import org.bukkit.Location;
-import org.bukkit.Material;
-import org.bukkit.block.Block;
-import org.bukkit.block.data.BlockData;
-import org.bukkit.craftbukkit.v1_16_R3.entity.CraftEntity;
-import org.bukkit.event.EventHandler;
-import org.bukkit.event.Listener;
-import org.bukkit.event.block.BlockBreakEvent;
-import org.bukkit.inventory.ItemStack;
-import org.bukkit.metadata.MetadataStoreBase;
-import org.bukkit.metadata.MetadataValue;
-import org.bukkit.plugin.Plugin;
-
 import me.benfah.cu.api.BlockInstance;
 import me.benfah.cu.api.CustomBlock;
 import me.benfah.cu.api.CustomRegistry;
 import me.benfah.cu.api.WorldStore;
-import me.benfah.cu.util.CustomBreakEvent;
-import me.benfah.cu.util.ReflectionUtils;
+import me.benfah.cu.util.Utils;
+import org.bukkit.GameMode;
+import org.bukkit.Material;
+import org.bukkit.block.Block;
+import org.bukkit.event.EventHandler;
+import org.bukkit.event.Listener;
+import org.bukkit.event.block.BlockBreakEvent;
+import org.bukkit.inventory.ItemStack;
 
 public class BlockBreakListener implements Listener
 {

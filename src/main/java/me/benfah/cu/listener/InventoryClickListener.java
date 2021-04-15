@@ -1,12 +1,11 @@
 package me.benfah.cu.listener;
 
+import me.benfah.cu.api.CustomGUI;
+import me.benfah.cu.api.CustomRegistry;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.inventory.PlayerInventory;
-
-import me.benfah.cu.api.CustomGUI;
-import me.benfah.cu.api.CustomRegistry;
 
 public class InventoryClickListener implements Listener
 {

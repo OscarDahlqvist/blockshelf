@@ -1,19 +1,16 @@
 package me.benfah.cu.api;
 
-import java.util.List;
-
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
-import org.bukkit.entity.Item;
 import org.bukkit.entity.Player;
 import org.bukkit.event.player.PlayerInteractEntityEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
-import org.bukkit.inventory.EquipmentSlot;
+import org.bukkit.event.player.PlayerItemDamageEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.Recipe;
 import org.bukkit.inventory.meta.ItemMeta;
 
-import me.benfah.cu.util.Utils;
+import java.util.List;
 
 public class CustomItem extends CustomBase {
 	
@@ -63,15 +60,15 @@ public class CustomItem extends CustomBase {
 		return is;
 	}
 	
-	public void onUpdate(Player p, int slot)	{
-		
-	}
-	
-	public void onInteract(PlayerInteractEvent e, EquipmentSlot es)	{
+	public void onTick(Player p, int slot)	{
 		
 	}
 
-	public void onUseItem(PlayerInteractEvent e, EquipmentSlot es){
+	public void onPlayerInteractEvent(PlayerInteractEvent e)	{
+		
+	}
+
+	public void onPlayerItemDamageEvent(PlayerItemDamageEvent e){
 
 	}
 	

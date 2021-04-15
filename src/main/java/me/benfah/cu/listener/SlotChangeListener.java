@@ -3,9 +3,6 @@ package me.benfah.cu.listener;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerItemHeldEvent;
-import org.bukkit.inventory.Inventory;
-
-import me.benfah.cu.util.JavassistUtil;
 
 public class SlotChangeListener implements Listener
 {

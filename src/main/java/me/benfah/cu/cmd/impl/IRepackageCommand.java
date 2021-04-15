@@ -1,14 +1,11 @@
 package me.benfah.cu.cmd.impl;
 
-import java.io.IOException;
-
+import me.benfah.cu.api.InitializationMethodProvider;
+import me.benfah.cu.cmd.ISubCommand;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.permissions.Permission;
 import org.bukkit.permissions.PermissionDefault;
-
-import me.benfah.cu.api.InitializationMethodProvider;
-import me.benfah.cu.cmd.ISubCommand;
 
 public class IRepackageCommand implements ISubCommand
 {

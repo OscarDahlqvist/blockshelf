@@ -3,14 +3,12 @@ package me.wilux.blockshelf.Register;
 import net.minecraft.server.v1_16_R3.MinecraftKey;
 import net.minecraft.server.v1_16_R3.PacketPlayOutRecipes;
 import net.minecraft.server.v1_16_R3.RecipeBookSettings;
-import net.minecraft.server.v1_16_R3.RecipeBookType;
 import org.bukkit.craftbukkit.v1_16_R3.inventory.CraftFurnaceRecipe;
 import org.bukkit.craftbukkit.v1_16_R3.inventory.CraftItemStack;
 import org.bukkit.craftbukkit.v1_16_R3.util.CraftNamespacedKey;
 import org.bukkit.inventory.FurnaceRecipe;
 
 import java.util.Collections;
-import java.util.Hashtable;
 
 public class FakeRecipe {
 

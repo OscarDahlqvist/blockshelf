@@ -1,6 +1,5 @@
 package me.benfah.cu.init;
 
-import me.benfah.cu.api.InitializationMethodProvider;
 import me.benfah.cu.util.InitializationState;
 
 public interface IInitializationMethod

@@ -2,7 +2,6 @@ package me.wilux.blockshelf;
 
 import com.comphenix.protocol.ProtocolLibrary;
 import com.comphenix.protocol.ProtocolManager;
-import com.comphenix.protocol.utility.ByteBuddyFactory;
 import me.benfah.cu.api.CustomBlock;
 import me.benfah.cu.api.CustomRegistry;
 import me.wilux.blockshelf.blocks.*;
@@ -11,7 +10,6 @@ import me.wilux.blockshelf.commands.DebugCommand2;
 import me.wilux.blockshelf.commands.SetAbility;
 import me.wilux.blockshelf.items.WateringCan;
 import me.wilux.blockshelf.items.WireSpool;
-import me.wilux.blockshelf.nms_hacks.PlayerHacks;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -38,7 +36,8 @@ public static JavaPlugin plugin;
         protocolManager = ProtocolLibrary.getProtocolManager();
         logger = getLogger();
 
-        PlayerHacks.hackPlayer();
+        //Bad way to do it
+        //PlayerHacks.hackPlayer();
 
         super.onEnable();
 

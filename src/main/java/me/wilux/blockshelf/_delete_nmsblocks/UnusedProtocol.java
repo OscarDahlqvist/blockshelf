@@ -10,6 +10,7 @@ import com.comphenix.protocol.wrappers.WrappedChatComponent;
 import me.wilux.blockshelf.Main;
 import org.bukkit.Bukkit;
 import org.bukkit.NamespacedKey;
+
 import java.util.function.Function;
 
 public class UnusedProtocol {

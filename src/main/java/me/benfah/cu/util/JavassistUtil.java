@@ -1,13 +1,6 @@
 package me.benfah.cu.util;
- 
-import javassist.CannotCompileException;
-import javassist.ClassPool;
-import javassist.CtClass;
-import javassist.CtField;
-import javassist.CtMethod;
-import javassist.CtNewConstructor;
-import javassist.NotFoundException;
-import me.wilux.blockshelf.Main;
+
+import javassist.*;
 
 public class JavassistUtil
 {

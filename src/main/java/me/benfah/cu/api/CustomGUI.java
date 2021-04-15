@@ -1,5 +1,8 @@
 package me.benfah.cu.api;
 
+import me.benfah.cu.util.InformationEntry;
+import me.benfah.cu.util.JavassistUtil;
+import me.benfah.cu.util.Utils;
 import org.bukkit.Material;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.event.inventory.InventoryCloseEvent;
@@ -9,10 +12,6 @@ import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.plugin.Plugin;
-
-import me.benfah.cu.util.JavassistUtil;
-import me.benfah.cu.util.InformationEntry;
-import me.benfah.cu.util.Utils;
 
 public class CustomGUI extends CustomBase
 {

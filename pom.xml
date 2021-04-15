@@ -49,7 +49,7 @@
                                 <excludes>
                                     <exclude>org.spigotmc:spigot</exclude>
                                     <exclude>org.spigotmc:spigot-api</exclude>
-                                    <exclude>com.comphenix.net:</exclude>
+                                    <exclude>com.comphenix.net:*</exclude>
                                     <exclude>net.minecraft.server.v1_16_R3:*</exclude>
                                     <exclude>junit:junit</exclude>
                                     <exclude>io.netty:*</exclude>
@@ -109,6 +109,7 @@
     </repositories>
 
     <dependencies>
+        <!--
         <dependency>
             <groupId>net.bytebuddy</groupId>
             <artifactId>byte-buddy</artifactId>
@@ -120,6 +121,7 @@
             <artifactId>byte-buddy-agent</artifactId>
             <version>1.10.22</version>
         </dependency>
+        !-->
 
         <!-- This is to fix correct bytebuddy https://stackoverflow.com/questions/59228679/illegal-state-exception-error-during-attachment-using-co-elastic-apm-attach-by !-->
 
@@ -127,6 +129,7 @@
             <groupId>com.comphenix.protocol</groupId>
             <artifactId>ProtocolLib</artifactId>
             <version>4.6.0</version>
+            <scope>provided</scope>
         </dependency>
 
         <dependency>

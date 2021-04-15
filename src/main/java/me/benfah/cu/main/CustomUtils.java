@@ -5,15 +5,13 @@ import me.benfah.cu.api.CustomRegistry;
 import me.benfah.cu.api.InitializationMethodProvider;
 import me.benfah.cu.cmd.CommandRegistry;
 import me.benfah.cu.cmd.CustomUtilsCommandExecutor;
-import me.benfah.cu.init.InitializationMethodRegistry;
 import me.benfah.cu.listener.*;
 import me.benfah.cu.util.Config;
-import me.benfah.cu.util.JavassistUtil;
 import me.benfah.cu.util.TickRunnable;
-import me.wilux.blockshelf.Main;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.plugin.java.JavaPlugin;
+
 import java.util.Map.Entry;
 public class CustomUtils extends JavaPlugin
 {

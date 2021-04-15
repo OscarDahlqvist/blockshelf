@@ -1,9 +1,9 @@
 package me.benfah.cu.util;
 
 
-import java.util.Set;
-
 import org.bukkit.inventory.ItemStack;
+
+import java.util.Set;
 
 
 public class NBTCompound {

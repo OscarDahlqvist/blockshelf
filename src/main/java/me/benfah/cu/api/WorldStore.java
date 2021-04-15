@@ -1,5 +1,9 @@
 package me.benfah.cu.api;
 
+import org.bukkit.Location;
+import org.bukkit.World;
+import org.bukkit.event.block.BlockBreakEvent;
+
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.ObjectOutputStream;
@@ -8,11 +12,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
-
-import org.bukkit.Location;
-import org.bukkit.World;
-import org.bukkit.block.Block;
-import org.bukkit.event.block.BlockBreakEvent;
 
 public class WorldStore
 {

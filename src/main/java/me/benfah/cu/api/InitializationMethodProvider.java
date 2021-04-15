@@ -2,7 +2,6 @@ package me.benfah.cu.api;
 
 import me.benfah.cu.init.IInitializationMethod;
 import me.benfah.cu.init.InitializationMethodRegistry;
-import me.benfah.cu.main.CustomUtils;
 import me.benfah.cu.util.Config;
 
 

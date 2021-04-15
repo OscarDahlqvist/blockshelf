@@ -5,8 +5,6 @@ import me.wilux.blockshelf.blocks.GuiAble;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryCloseEvent;
-
-import me.benfah.cu.api.CustomRegistry;
 public class InventoryCloseListener implements Listener
 {
 	

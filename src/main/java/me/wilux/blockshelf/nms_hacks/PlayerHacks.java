@@ -1,5 +1,5 @@
 package me.wilux.blockshelf.nms_hacks;
-
+/*
 import me.wilux.blockshelf.Main;
 import net.bytebuddy.ByteBuddy;
 import net.bytebuddy.agent.ByteBuddyAgent;
@@ -27,27 +27,5 @@ public class PlayerHacks {
                         entityClazz.getClassLoader(),
                         ClassReloadingStrategy.fromInstalledAgent());
 
-        /*
-        ByteBuddyFactory bf = ByteBuddyFactory.getInstance();
-
-        DynamicType.Loaded<Entity> p =
-                bf.createSubclass(EntityClass)
-                .method(ElementMatchers.named("isInRain"))
-                .intercept(FixedValue.value(true))
-                .make()
-                .load(
-                        bf.getClassLoader(),
-                        ClassLoadingStrategy.Default.INJECTION);
-        */
-        /*
-        ByteBuddy buddy = new ByteBuddy().with(TypeValidation.DISABLED);
-        buddy
-                .redefine(EntityClass)
-                .method(ElementMatchers.named("isInRain"))
-                .intercept(FixedValue.value(true))
-                .make()
-                .load(
-                        EntityClass.getClassLoader(),
-                        ClassLoadingStrategy.Default.INJECTION);*/
     }
-}
+}*/

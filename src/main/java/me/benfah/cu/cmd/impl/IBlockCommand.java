@@ -1,18 +1,14 @@
 package me.benfah.cu.cmd.impl;
 
-import java.util.ArrayList;
-
+import me.benfah.cu.api.CustomBlock;
+import me.benfah.cu.api.CustomRegistry;
+import me.benfah.cu.cmd.ISubCommand;
+import me.benfah.cu.util.Utils;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.permissions.Permission;
 import org.bukkit.permissions.PermissionDefault;
-
-import me.benfah.cu.api.CustomBase;
-import me.benfah.cu.api.CustomBlock;
-import me.benfah.cu.api.CustomRegistry;
-import me.benfah.cu.cmd.ISubCommand;
-import me.benfah.cu.util.Utils;
 
 public class IBlockCommand implements ISubCommand
 {

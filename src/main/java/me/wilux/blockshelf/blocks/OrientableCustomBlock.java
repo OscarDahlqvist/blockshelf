@@ -1,7 +1,6 @@
 package me.wilux.blockshelf.blocks;
 
 import me.benfah.cu.api.CustomBlock;
-import me.wilux.blockshelf.Main;
 import org.bukkit.Location;
 import org.bukkit.block.BlockFace;
 import org.bukkit.event.block.BlockPlaceEvent;

@@ -1,13 +1,12 @@
 package me.benfah.cu.util;
 
-import java.util.Set;
-import java.util.Stack;
-
+import com.google.gson.Gson;
+import com.google.gson.JsonSyntaxException;
 import org.bukkit.Bukkit;
 import org.bukkit.inventory.ItemStack;
 
-import com.google.gson.Gson;
-import com.google.gson.JsonSyntaxException;
+import java.util.Set;
+import java.util.Stack;
 
 public class NBTReflectionUtil {
 
