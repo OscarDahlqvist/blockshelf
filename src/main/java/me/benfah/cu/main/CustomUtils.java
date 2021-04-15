@@ -44,34 +44,19 @@ public class CustomUtils extends JavaPlugin
 		Bukkit.getPluginManager().registerEvents(new PlayerJoinListener(), this);
 		Bukkit.getPluginManager().registerEvents(new PlaceBlockListener(), this);
 		Bukkit.getPluginManager().registerEvents(new InventoryCloseListener(), this);
+
 		CommandRegistry.initSubCommands();
-		Bukkit.getPluginCommand("customutils").setExecutor(new CustomUtilsCommandExecutor());
-		System.out.println("####### CUSTOMUTILS 2 #######");
+		Bukkit.getPluginCommand("blockshelf").setExecutor(new CustomUtilsCommandExecutor());
+		System.out.println("####### BLOCKSHELF #######");
 		
-		
-		Bukkit.getScheduler().runTask(instance, new Runnable() {
-				
-			@Override
-			public void run() {
-				InitializationMethodProvider.init(false);
-			}
-		});
-		
+		Bukkit.getScheduler().runTask(instance, () -> InitializationMethodProvider.init(false));
 
         Bukkit.getScheduler().runTaskTimer(instance, new TickRunnable(), 1, 1);
 	}
 	
-	
-	
-	
-	
 	@Override
-	public void onDisable()
-	{
-		
-		
-		for(Entry<Location, BlockInstance> entr : BlockInstance.getBlockInstanceMap().entrySet())
-		{
+	public void onDisable()	{
+		for(Entry<Location, BlockInstance> entr : BlockInstance.getBlockInstanceMap().entrySet()) {
 			if(entr.getValue() != null)
 			entr.getValue().write();
 		}
@@ -82,16 +67,8 @@ public class CustomUtils extends JavaPlugin
 		Config.onDisable();
 	}
 
-
-
-
-
 	public static CustomUtils getInstance()
 	{
 		return instance;
 	}
-	
-	
-	
-	
 }
