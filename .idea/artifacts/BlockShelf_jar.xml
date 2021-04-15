@@ -2,7 +2,7 @@
   <artifact type="jar" name="BlockShelf:jar">
     <output-path>D:/wilux/server/plugins</output-path>
     <root id="archive" name="BlockShelf.jar">
-      <element id="module-output" name="BlockShelf" />
+      <element id="module-output" name="Blockshelf-Playground" />
       <element id="file-copy" path="$PROJECT_DIR$/src/main/resources/plugin.yml" />
       <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/javassist/javassist/3.22.0-GA/javassist-3.22.0-GA.jar" path-in-jar="/" />
       <element id="extracted-dir" path="$MAVEN_REPOSITORY$/com/dropbox/core/dropbox-core-sdk/3.0.5/dropbox-core-sdk-3.0.5.jar" path-in-jar="/" />

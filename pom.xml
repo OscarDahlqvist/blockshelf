@@ -54,7 +54,18 @@
                                     <exclude>junit:junit</exclude>
                                     <exclude>io.netty:*</exclude>
                                 </excludes>
+
+                                <includes>
+                                    <include>me.lucko:commodore</include>
+                                </includes>
                             </artifactSet>
+
+                            <relocations>
+                                <relocation>
+                                    <pattern>me.lucko.commodore</pattern>
+                                    <shadedPattern>me.wilux.blockshelf.commodore</shadedPattern>
+                                </relocation>
+                            </relocations>
                         </configuration>
                     </execution>
                 </executions>
@@ -76,7 +87,7 @@
                 <configuration>
                     <archive>
                         <manifestEntries>
-                            <Main-Class>me.wilux.blockshelf.Main</Main-Class>
+                            <Main-Class>me.wilux.blockshelf.main.Blockshelf</Main-Class>
                             <Implementation-Title>ProtocolLib</Implementation-Title>
                             <Implementation-Version>${project.fullVersion}</Implementation-Version>
                             <Implementation-Vendor>dmulloy2</Implementation-Vendor>
@@ -143,6 +154,13 @@
             <groupId>org.javassist</groupId>
             <artifactId>javassist</artifactId>
             <version>3.22.0-GA</version>
+            <scope>compile</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>me.lucko</groupId>
+            <artifactId>commodore</artifactId>
+            <version>1.9</version>
             <scope>compile</scope>
         </dependency>
 

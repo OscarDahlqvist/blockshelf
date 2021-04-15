@@ -1,4 +1,4 @@
-main: me.wilux.blockshelf.Main
+main: me.wilux.blockshelf.main.Blockshelf
 name: Blockshelf
 version: 0.1
 authors: [wilux]
@@ -8,13 +8,4 @@ depend: [ProtocolLib]
 load: STARTUP
 
 commands:
-  customutils:
-  rpsend:
-    description: debug command
-    usage: /rpsend
-  rpdelete:
-    description: debug command
-    usage: /rpdelete
-  setability:
-    description: debug command
-    usage: /setability
+  blockshelf:
