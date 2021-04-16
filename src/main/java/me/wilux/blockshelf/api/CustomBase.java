@@ -8,27 +8,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class CustomBase
-{
+public class CustomBase {
 	protected Plugin plugin;
 	
 	final private ArrayList<InformationEntry> mpe = new ArrayList<>();
-	
-	
-	
-
-	
-	
-
 
 	public Material baseMaterial;
 
-	
-	
-	
-	
-	
-	
 	public CustomBase(InformationEntry entry, Material baseMaterial) {
 		mpe.add(entry);
 		this.baseMaterial = baseMaterial;

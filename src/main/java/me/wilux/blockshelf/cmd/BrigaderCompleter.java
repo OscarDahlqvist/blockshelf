@@ -1,12 +1,10 @@
 package me.wilux.blockshelf.cmd;
 
-import com.mojang.brigadier.arguments.IntegerArgumentType;
 import com.mojang.brigadier.builder.LiteralArgumentBuilder;
-import com.mojang.brigadier.builder.RequiredArgumentBuilder;
 import com.mojang.brigadier.tree.LiteralCommandNode;
-import me.wilux.blockshelf.api.CustomBlock;
-import me.wilux.blockshelf.api.CustomItem;
-import me.wilux.blockshelf.api.CustomRegistry;
+import me.wilux.blockshelf.api.block.CustomBlock;
+import me.wilux.blockshelf.api.item.CustomItem;
+import me.wilux.blockshelf.api.store.CustomRegistry;
 
 public class BrigaderCompleter {
     public static LiteralCommandNode get(String name){

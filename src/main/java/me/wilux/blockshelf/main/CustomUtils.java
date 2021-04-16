@@ -1,10 +1,8 @@
 package me.wilux.blockshelf.main;
 
-import me.wilux.blockshelf.api.BlockInstance;
-import me.wilux.blockshelf.api.CustomRegistry;
-import me.wilux.blockshelf.api.InitializationMethodProvider;
-import me.wilux.blockshelf.cmd.CommandRegistry;
-import me.wilux.blockshelf.cmd.CustomUtilsCommandExecutor;
+import me.wilux.blockshelf.api.store.BlockInstance;
+import me.wilux.blockshelf.api.store.CustomRegistry;
+import me.wilux.blockshelf.init.InitializationMethodProvider;
 import me.wilux.blockshelf.listener.*;
 import me.wilux.blockshelf.util.Config;
 import me.wilux.blockshelf.util.TickRunnable;

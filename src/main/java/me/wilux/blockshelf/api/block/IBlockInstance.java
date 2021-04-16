@@ -1,4 +1,6 @@
-package me.wilux.blockshelf.api;
+package me.wilux.blockshelf.api.block;
+
+import me.wilux.blockshelf.api.block.CustomBlock;
 
 public interface IBlockInstance
 {

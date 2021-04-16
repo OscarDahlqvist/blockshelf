@@ -1,6 +1,6 @@
 package me.wilux.blockshelf.listener;
 
-import me.wilux.blockshelf.api.InitializationMethodProvider;
+import me.wilux.blockshelf.init.InitializationMethodProvider;
 import me.wilux.blockshelf.main.CustomUtils;
 import me.wilux.blockshelf.util.Config;
 import me.wilux.blockshelf.util.InitializationState;

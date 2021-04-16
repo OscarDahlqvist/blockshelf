@@ -1,5 +1,6 @@
-package me.wilux.blockshelf.api;
+package me.wilux.blockshelf.api.item;
 
+import me.wilux.blockshelf.api.CustomBase;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
@@ -14,7 +15,7 @@ import java.util.List;
 
 public class CustomItem extends CustomBase {
 	
-	protected String title;
+	protected String displayName;
 	protected List<String> lore;
 	public List<String> getLore() {
 		return lore;
@@ -26,35 +27,23 @@ public class CustomItem extends CustomBase {
 
 	public CustomItem(String name, String modelPath) {
 		super(name, modelPath, Material.CLOCK);
-		this.title = title;
+		this.displayName = name;
 	}
 
-	public CustomItem(String name, String modelPath, String title) {
+	public CustomItem(String name, String modelPath, String displayName) {
 		super(name, modelPath, Material.CLOCK);
-		this.title = title;
+		this.displayName = displayName;
 	}
 	
-	public CustomItem(String name, String modelPath, String title, List<String> lore) {
-		super(name, modelPath, Material.CLOCK);
-		this.title = title;
-		this.lore = lore;
-	}
-	
-	public CustomItem(String name, String modelPath, String title, Material baseMat) {
+	public CustomItem(String name, String modelPath, String displayName, Material baseMat) {
 		super(name, modelPath, baseMat);
-		this.title = title;
-	}
-	
-	public CustomItem(String name, String modelPath, String title, List<String> lore, Material baseMat)	{
-		super(name, modelPath, baseMat);
-		this.title = title;
-		this.lore = lore;
+		this.displayName = displayName;
 	}
 	
 	public ItemStack getItem()	{
 		ItemStack is = new ItemStack(this.baseMaterial);
 		ItemMeta im = is.getItemMeta();
-		im.setDisplayName(ChatColor.RESET + title);
+		im.setDisplayName(ChatColor.RESET + displayName);
 		im.setCustomModelData((int)getId());
 		is.setItemMeta(im);
 		return is;
@@ -81,14 +70,14 @@ public class CustomItem extends CustomBase {
 		
 	}
 	
-	public String getTitle()
+	public String getDisplayName()
 	{
-		return title;
+		return displayName;
 	}
 
-	public void setTitle(String title)
+	public void setDisplayName(String displayName)
 	{
-		this.title = title;
+		this.displayName = displayName;
 	}
 	
 	

@@ -1,9 +1,8 @@
 package me.wilux.blockshelf.listener;
 
-import me.wilux.blockshelf.api.BlockInstance;
-import me.wilux.blockshelf.api.CustomBlock;
-import me.wilux.blockshelf.api.CustomRegistry;
-import me.wilux.blockshelf.api.WorldStore;
+import me.wilux.blockshelf.api.store.BlockInstance;
+import me.wilux.blockshelf.api.block.CustomBlock;
+import me.wilux.blockshelf.api.store.CustomRegistry;
 import me.wilux.blockshelf.util.Utils;
 import org.bukkit.GameMode;
 import org.bukkit.Material;
@@ -22,7 +21,7 @@ public class BlockBreakListener implements Listener
 		//TODO do so it uses better customBLock testing?
 		if(Utils.hasCustomModelDataArmorstand(b)) {
 			CustomBlock cb = CustomRegistry.getCustomBlockByBlock(b);
-			cb.onBlockBroken(e);
+			cb.onBlockBreakEvent(e);
 			if(e.getPlayer().getGameMode() != GameMode.CREATIVE){
 				for(ItemStack i : cb.getLoot(e.getBlock())) {
 					if(i != null && i.getType() != Material.AIR)

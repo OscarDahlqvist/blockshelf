@@ -1,4 +1,4 @@
-package me.wilux.blockshelf.api;
+package me.wilux.blockshelf.api.store;
 
 public interface IInstanceProvider
 {

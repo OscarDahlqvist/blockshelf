@@ -1,5 +1,6 @@
-package me.wilux.blockshelf.api;
+package me.wilux.blockshelf.api.gui;
 
+import me.wilux.blockshelf.api.CustomBase;
 import me.wilux.blockshelf.util.InformationEntry;
 import me.wilux.blockshelf.util.JavassistUtil;
 import me.wilux.blockshelf.util.Utils;

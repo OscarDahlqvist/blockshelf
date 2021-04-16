@@ -1,7 +1,7 @@
 package me.wilux.blockshelf.cmd.impl;
 
-import me.wilux.blockshelf.api.CustomItem;
-import me.wilux.blockshelf.api.CustomRegistry;
+import me.wilux.blockshelf.api.item.CustomItem;
+import me.wilux.blockshelf.api.store.CustomRegistry;
 import me.wilux.blockshelf.cmd.ISubCommand;
 import me.wilux.blockshelf.util.Utils;
 import org.bukkit.command.Command;

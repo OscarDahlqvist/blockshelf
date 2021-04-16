@@ -1,7 +1,7 @@
 package me.wilux.blockshelf.listener;
 
-import me.wilux.blockshelf.api.CustomBlock;
-import me.wilux.blockshelf.api.CustomRegistry;
+import me.wilux.blockshelf.api.block.CustomBlock;
+import me.wilux.blockshelf.api.store.CustomRegistry;
 import org.bukkit.GameMode;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -9,11 +9,10 @@ import org.bukkit.event.block.BlockPlaceEvent;
 
 public class PlaceBlockListener implements Listener {
     @EventHandler
-    public void onBlockPlace(BlockPlaceEvent evt) {
-
+    public void onBlockPlaceEvent(BlockPlaceEvent evt) {
         CustomBlock cb = CustomRegistry.getCustomBlockByStack(evt.getItemInHand());
         if(cb != null){
-            cb.placeBlock(evt.getBlockPlaced().getLocation(),evt);
+            cb.onBlockPlaceEvent(evt.getBlockPlaced().getLocation(),evt);
             if(evt.getPlayer().getGameMode() != GameMode.CREATIVE) evt.getItemInHand().setAmount(evt.getItemInHand().getAmount() - 1);
         }
 /*

@@ -1,7 +1,5 @@
 package me.wilux.blockshelf.listener;
 
-import me.wilux.blockshelf.main.Blockshelf;
-import me.wilux.blockshelf.extentions.GuiAble;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryCloseEvent;

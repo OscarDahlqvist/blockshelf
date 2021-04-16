@@ -1,6 +1,6 @@
 package me.wilux.blockshelf.cmd.impl;
 
-import me.wilux.blockshelf.api.InitializationMethodProvider;
+import me.wilux.blockshelf.init.InitializationMethodProvider;
 import me.wilux.blockshelf.cmd.ISubCommand;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;

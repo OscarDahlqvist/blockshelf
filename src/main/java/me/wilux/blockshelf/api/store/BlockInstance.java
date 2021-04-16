@@ -1,5 +1,7 @@
-package me.wilux.blockshelf.api;
+package me.wilux.blockshelf.api.store;
 
+import me.wilux.blockshelf.api.block.IBlockInstance;
+import me.wilux.blockshelf.api.block.CustomBlock;
 import org.bukkit.*;
 import org.bukkit.block.*;
 import org.bukkit.block.data.BlockData;
@@ -16,7 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class BlockInstance implements Block, IBlockInstance{
+public class BlockInstance implements Block, IBlockInstance {
 	Location loc;
 	static Map<Location, BlockInstance> biMap = new HashMap<>();
 	public BlockInstance(Block b)

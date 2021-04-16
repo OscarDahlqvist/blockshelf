@@ -1,6 +1,6 @@
 package me.wilux.blockshelf.listener;
 
-import me.wilux.blockshelf.api.CustomRegistry;
+import me.wilux.blockshelf.api.store.CustomRegistry;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.PrepareItemCraftEvent;

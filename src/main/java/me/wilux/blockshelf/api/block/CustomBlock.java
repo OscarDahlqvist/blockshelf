@@ -1,5 +1,6 @@
-package me.wilux.blockshelf.api;
+package me.wilux.blockshelf.api.block;
 
+import me.wilux.blockshelf.api.CustomBase;
 import me.wilux.blockshelf.main.Blockshelf;
 import net.minecraft.server.v1_16_R3.*;
 import org.bukkit.Material;
@@ -26,14 +27,12 @@ public class CustomBlock extends CustomBase
 		return plugin;
 	}
 
-	public CustomBlock(String name, String modelPath, String title)
-	{
+	public CustomBlock(String name, String modelPath, String title)	{
 		super(name, modelPath, Material.BARRIER);
 		this.title = title;
 	}
 	
-	public CustomBlock(String name, String modelPath, String title, Material baseMat)
-	{
+	public CustomBlock(String name, String modelPath, String title, Material baseMat) {
 		super(name, modelPath, baseMat);
 		this.title = title;
 	}
@@ -60,8 +59,7 @@ public class CustomBlock extends CustomBase
 		return getMainModelPathEntry().getPathToModel();
 	}
 
-	public ItemStack getBlockItem()
-	{
+	public ItemStack getBlockItem()	{
 		ItemStack is = new ItemStack(this.baseMaterial);
 		ItemMeta im = is.getItemMeta();
 		im.setDisplayName(ChatColor.RESET + title);
@@ -87,14 +85,16 @@ public class CustomBlock extends CustomBase
 		return Sound.BLOCK_STONE_HIT;
 	}
 	
-	public void onBlockPlaced(BlockPlaceEvent e) {
-
+	public void onBlockPlaceEvent(BlockPlaceEvent e) {
 	}
 
-	public void onBlockBroken(BlockBreakEvent e){
+	public void onBlockBreakEvent(BlockBreakEvent e){
 		World w = e.getPlayer().getWorld();
 		Location spawnLoc = e.getBlock().getLocation().add(new Vector(0.5,0.5,0.5));
 		w.spawnParticle(Particle.ITEM_CRACK, spawnLoc, 30,0,0,0,0.1f, getBlockItem());
+	}
+	public void onBlockPlaceEvent(Location l, BlockPlaceEvent evt) {
+		setBlock(l);
 	}
 
 	public ItemStack[] getLoot(Block b)
@@ -102,14 +102,11 @@ public class CustomBlock extends CustomBase
 		return new ItemStack[] {getBlockItem()};
 	}
 
-	public void placeBlock(Location l,BlockPlaceEvent evt) {
-		setBlock(l);
-	}
-
 	public void setBlock(Location l) {
 		Bukkit.getScheduler().scheduleSyncDelayedTask(
 				Blockshelf.getInstance(), new CustomBlock.SetInstantSpawnerData(this, l), 0);
 	}
+
 	public class SetInstantSpawnerData implements Runnable {
 		CustomBlock customBlock;
 		Location location;
@@ -194,7 +191,6 @@ public class CustomBlock extends CustomBase
 		return null;
 	}
 	
-	
 	public String getTitle()
 	{
 		return title;
@@ -205,8 +201,7 @@ public class CustomBlock extends CustomBase
 		this.title = title;
 	}
 	
-	public Method setAccessible(Method f)
-	{
+	public Method setAccessible(Method f) {
 		f.setAccessible(true);
 		return f;
 	}

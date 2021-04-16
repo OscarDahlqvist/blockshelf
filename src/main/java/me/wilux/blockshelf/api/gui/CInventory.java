@@ -1,4 +1,4 @@
-package me.wilux.blockshelf.api;
+package me.wilux.blockshelf.api.gui;
 
 import me.wilux.blockshelf.util.JavassistUtil;
 import me.wilux.blockshelf.util.ReflectionUtils;

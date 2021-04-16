@@ -1,6 +1,10 @@
 package me.wilux.blockshelf.util;
 
 import me.wilux.blockshelf.api.*;
+import me.wilux.blockshelf.api.block.CustomBlock;
+import me.wilux.blockshelf.api.gui.CustomGUI;
+import me.wilux.blockshelf.api.item.CustomItem;
+import me.wilux.blockshelf.api.store.CustomRegistry;
 import net.minecraft.server.v1_16_R3.BlockPosition;
 import net.minecraft.server.v1_16_R3.NBTTagCompound;
 import net.minecraft.server.v1_16_R3.NBTTagList;

@@ -2,27 +2,32 @@ package me.wilux.blockshelf.main;
 
 import me.lucko.commodore.Commodore;
 import me.lucko.commodore.CommodoreProvider;
-import me.wilux.blockshelf.api.CustomBlock;
-import me.wilux.blockshelf.api.CustomItem;
-import me.wilux.blockshelf.api.CustomRegistry;
+import me.wilux.blockshelf.api.block.CustomBlock;
+import me.wilux.blockshelf.api.item.CustomItem;
+import me.wilux.blockshelf.api.store.CustomRegistry;
 import me.wilux.blockshelf.cmd.CommandRegistry;
 import me.wilux.blockshelf.cmd.CustomUtilsCommandExecutor;
-import me.wilux.blockshelf.extentions.GuiAble;
+import me.wilux.blockshelf.api.block.IGuiAble;
 import me.wilux.blockshelf.cmd.BrigaderCompleter;
+import me.wilux.blockshelf.example.WateringCan;
 import org.bukkit.Bukkit;
+import org.bukkit.Material;
 import org.bukkit.command.PluginCommand;
 import org.bukkit.entity.Player;
 
 import java.util.HashMap;
+import java.util.logging.Logger;
 
 public class Blockshelf extends CustomUtils {
 
     private static Blockshelf instance;
-    private static HashMap<Player, GuiAble> currentlyOpenInventories;
+    private static Logger logger;
+    private static HashMap<Player, IGuiAble> currentlyOpenInventories;
 
     @Override
     public void onEnable() {
         instance = this;
+        logger = this.getServer().getLogger();
         super.onEnable();
 
         //TODO: namespace with plugin
@@ -35,6 +40,10 @@ public class Blockshelf extends CustomUtils {
         CustomRegistry.register(exDirt,this);
         CustomItem wireSpool = new CustomItem("wire_spool","pseudoitem/wire_spool","Wire Spool");
         CustomRegistry.register(wireSpool,this);
+        CustomItem wateringCan = new WateringCan(
+                "watering_can","pseudoitem/watering_can","Watering Can", Material.CARROT_ON_A_STICK, 13
+        );
+        CustomRegistry.register(wateringCan,this);
 
         //TODO: THIS MUST RUN AFTER BLOCK REGISTRATION, MAKE SURE TO FIX
         CommandRegistry.initSubCommands();
@@ -48,7 +57,8 @@ public class Blockshelf extends CustomUtils {
     }
 
     public static Blockshelf getInstance(){return instance;}
-    public static HashMap<Player, GuiAble> getCurrentlyOpenInventories(){return currentlyOpenInventories;}
+    public static Logger getLog(){return logger;}
+    public static HashMap<Player, IGuiAble> getCurrentlyOpenInventories(){return currentlyOpenInventories;}
 
     @Override
     public void onDisable() {

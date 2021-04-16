@@ -1,7 +1,8 @@
-package me.wilux.blockshelf.extentions;
+package me.wilux.blockshelf.api.block;
 
+import org.bukkit.entity.Player;
 import org.bukkit.event.inventory.InventoryCloseEvent;
 
-public interface GuiAble {
+public interface IGuiAble {
     void onCloseGui(InventoryCloseEvent e);
 }

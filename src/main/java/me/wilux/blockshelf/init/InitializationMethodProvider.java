@@ -1,4 +1,4 @@
-package me.wilux.blockshelf.api;
+package me.wilux.blockshelf.init;
 
 import me.wilux.blockshelf.init.IInitializationMethod;
 import me.wilux.blockshelf.init.InitializationMethodRegistry;

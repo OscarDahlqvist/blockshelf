@@ -1,6 +1,10 @@
-package me.wilux.blockshelf.api;
+package me.wilux.blockshelf.api.store;
 
 import com.google.common.collect.HashBiMap;
+import me.wilux.blockshelf.api.CustomBase;
+import me.wilux.blockshelf.api.block.CustomBlock;
+import me.wilux.blockshelf.api.gui.CustomGUI;
+import me.wilux.blockshelf.api.item.CustomItem;
 import me.wilux.blockshelf.main.CustomUtils;
 import me.wilux.blockshelf.util.InformationEntry;
 import me.wilux.blockshelf.util.JavassistUtil;
@@ -20,9 +24,9 @@ import java.util.*;
 
 public class CustomRegistry
 {
-	public static final ArrayList<CustomBlock> CUSTOM_BLOCK_REGISTRY = new ArrayList<CustomBlock>(); 
+	public static final ArrayList<CustomBlock> CUSTOM_BLOCK_REGISTRY = new ArrayList<CustomBlock>();
 	public static final ArrayList<CustomGUI> CUSTOM_GUI_REGISTRY = new ArrayList<CustomGUI>();
-	public static final ArrayList<CustomItem> CUSTOM_ITEM_REGISTRY = new ArrayList<CustomItem>(); 
+	public static final ArrayList<CustomItem> CUSTOM_ITEM_REGISTRY = new ArrayList<CustomItem>();
 	public static final ArrayList<JavaPlugin> PLUGIN_REGISTRY = new ArrayList<JavaPlugin>();
 	public static HashMap<String, Integer> ID_NAME_MAP;
 	public static final HashBiMap<String, Class<? extends BlockInstance>> BLOCK_INSTANCE_MAP = HashBiMap.create();
@@ -113,28 +117,6 @@ public class CustomRegistry
 				}
 			}
 		}
-	}
-
-	@Deprecated
-	public static void registerItem(CustomItem ci, JavaPlugin pl) {
-		ci.plugin = pl;
-		
-		if(!PLUGIN_REGISTRY.contains(pl))
-		PLUGIN_REGISTRY.add(pl);
-		setIds(ci);
-		CUSTOM_ITEM_REGISTRY.add(ci);
-		if(ci.getRecipe() != null)
-		Bukkit.addRecipe(ci.getRecipe());	
-	}
-	
-	@Deprecated
-	public static void registerBlock(CustomBlock cb, JavaPlugin pl)	{
-		cb.plugin = pl;
-		
-		if(!PLUGIN_REGISTRY.contains(pl)) PLUGIN_REGISTRY.add(pl);
-		setIds(cb);
-		CUSTOM_BLOCK_REGISTRY.add(cb);
-		if(cb.getRecipe() != null) Bukkit.addRecipe(cb.getRecipe());
 	}
 	
 	public static CustomItem getCustomItemByName(String name) {
@@ -243,14 +225,11 @@ public class CustomRegistry
 		
 		setIds(cb);
 
-		if(cb instanceof CustomGUI)
-		return CUSTOM_GUI_REGISTRY.add((CustomGUI) cb);
+		if(cb instanceof CustomGUI) return CUSTOM_GUI_REGISTRY.add((CustomGUI) cb);
 		
-		if(cb instanceof CustomItem)
-		return CUSTOM_ITEM_REGISTRY.add((CustomItem) cb);
-		
-		if(cb instanceof CustomBlock)
-		return CUSTOM_BLOCK_REGISTRY.add((CustomBlock) cb);
+		if(cb instanceof CustomItem) return CUSTOM_ITEM_REGISTRY.add((CustomItem) cb);
+
+		if(cb instanceof CustomBlock) return CUSTOM_BLOCK_REGISTRY.add((CustomBlock) cb);
 		
 		return false;
 	}

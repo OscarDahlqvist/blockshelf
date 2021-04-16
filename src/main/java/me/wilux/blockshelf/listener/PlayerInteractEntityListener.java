@@ -1,6 +1,6 @@
 package me.wilux.blockshelf.listener;
 
-import me.wilux.blockshelf.api.CustomItem;
+import me.wilux.blockshelf.api.item.CustomItem;
 import me.wilux.blockshelf.util.Utils;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
